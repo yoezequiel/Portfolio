@@ -10,13 +10,13 @@ import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://yoezequiel.vercel.app/",
+    site: "https://yoezequiel.netlify.app/",
     integrations: [
         sitemap(),
         robotsTxt({
             sitemap: [
-                "https://yoezequiel.vercel.app/sitemap-index.xml",
-                "https://yoezequiel.vercel.app/sitemap-0.xml",
+                "https://yoezequiel.netlify.app/sitemap-index.xml",
+                "https://yoezequiel.netlify.app/sitemap-0.xml",
             ],
         }),
         solidJs(),
