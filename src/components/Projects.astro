@@ -1,0 +1,36 @@
+---
+import Card from "./Card/index.astro";
+import Project from "./Project.astro";
+---
+
+<Card colSpan="lg:col-span-3" rowSpan="md:row-span-4" title="Main Projects">
+    <div class="flex gap-5.5 max-md:grid max-md:ml-9">
+        <a href="https://github.com/yoezequiel/FarmaGo" target="_blank">
+            <div class="flex w-60 h-auto">
+                <Project
+                    title="FarmaGo"
+                    body="FarmaGo es una aplicación diseñada para facilitar la vida de cualquier comprador de productos de farmacias."
+                    link1="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                />
+            </div>
+        </a>
+        <a href="https://github.com/yoezequiel/KeyCrate" target="_blank">
+            <div class="flex w-60">
+                <Project
+                    title="KeyCrate"
+                    body="Aplicación web para gestionar contraseñas de forma segura."
+                    link1="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                />
+            </div>
+        </a>
+        <a href="https://github.com/yoezequiel/Blog" target="_blank">
+            <div class="flex w-60">
+                <Project
+                    title="Blog"
+                    body="Mi Blog personal de tecnologia"
+                    link1="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                />
+            </div>
+        </a>
+    </div>
+</Card>

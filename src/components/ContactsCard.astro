@@ -1,0 +1,33 @@
+---
+import Card from "./Card/index.astro";
+import { LINKS } from "../lib/constants";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
+    <div class="h-full">
+        <header class="flex items-center">
+            <h1 class="text-white text-xl font-bold">
+                ¡Comencemos a trabajar juntos!
+            </h1>
+        </header>
+        <address class="flex flex-col mt-4">
+            <h2 class="text-gray-500">Detalles de contacto</h2>
+            <p>ezequielcasiano15@gmail.com</p>
+            <p>Argentina</p>
+            <div class="flex flex-col mt-4 w-fit">
+                <h2 class="text-gray-500">Redes Sociales</h2>
+                <ul>
+                    <li>
+                        <a href={LINKS.linkedin} target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href={LINKS.github} target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a href={LINKS.twitter} target="_blank">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </address>
+    </div>
+</Card>
