@@ -1,64 +1,82 @@
-
-import { useState } from "react";
-import { Menu, X, Github, Linkedin, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Code2 } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { name: 'Inicio', href: '#inicio' },
+    { name: 'Sobre mí', href: '#sobre-mi' },
+    { name: 'Proyectos', href: '#proyectos' },
+    { name: 'Contacto', href: '#contacto' },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="text-xl font-bold">Casiano Ezequiel</span>
-        </div>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <a href="#home" className="nav-link active-nav-link">Inicio</a>
-          <a href="#about" className="nav-link">Sobre mí</a>
-          <a href="#projects" className="nav-link">Proyectos</a>
-          <a href="#contact" className="nav-link">Contacto</a>
-          <div className="flex items-center gap-4 ml-4">
-            <a href="https://github.com/yoezequiel" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/yoezequiel/" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <Linkedin size={20} />
-            </a>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-4 py-3 sm:py-4">
+        <nav className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Code2 className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />
+            <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Casiano Ezequiel
+            </span>
           </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
+              >
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-300 hover:text-white transition-colors duration-200 p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </nav>
-        
-        {/* Mobile Menu Button */}
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="md:hidden" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </Button>
-      </div>
-      
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="container md:hidden py-4 space-y-4 border-t">
-          <nav className="flex flex-col space-y-4">
-            <a href="#home" className="nav-link active-nav-link">Inicio</a>
-            <a href="#about" className="nav-link">Sobre mí</a>
-            <a href="#projects" className="nav-link">Proyectos</a>
-            <a href="#contact" className="nav-link">Contacto</a>
-          </nav>
-          <div className="flex items-center gap-4 pt-2">
-            <a href="https://github.com/yoezequiel" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/yoezequiel/" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <Linkedin size={20} />
-            </a>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900/98 backdrop-blur-sm border-t border-gray-800 shadow-xl">
+            <div className="container mx-auto px-4 py-6">
+              <div className="space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="block py-3 px-4 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 text-lg font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 };
