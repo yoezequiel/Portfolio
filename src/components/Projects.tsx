@@ -17,29 +17,10 @@ const Projects = () => {
         'Métricas de mantenibilidad (branches muertos)',
         'Generación de archivos JSON con valores agregados'
       ],
-      demoUrl: '#',
-      codeUrl: '#',
+      demoUrl: 'https://stats.crobf.tech',
+      codeUrl: 'https://github.com/CROBF-tech/Stats',
       gradient: 'from-blue-400 to-cyan-600',
       icon: Database
-    },
-    {
-      title: 'Cybersecurity Awareness Platform',
-      description: 'Sistema de concientización en ciberseguridad mediante simulaciones de spoofing y técnicas de ingeniería social.',
-      image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=500',
-      technologies: ['Node.js', 'Express', 'Database Tracking', 'Email Systems'],
-      year: '2024',
-      status: 'Implementado',
-      details: [
-        'Landing pages con trazabilidad completa',
-        'Base de datos para métricas de efectividad',
-        'Simulaciones de ataques controlados',
-        'Campañas internas personalizadas',
-        'Reportes de concientización detallados'
-      ],
-      demoUrl: '#',
-      codeUrl: '#',
-      gradient: 'from-red-400 to-orange-600',
-      icon: Shield
     },
     {
       title: 'CROBF Infrastructure',
@@ -54,8 +35,8 @@ const Projects = () => {
         'Automatización de procesos internos',
         'Infraestructura escalable y segura'
       ],
-      demoUrl: '#',
-      codeUrl: '#',
+      demoUrl: 'http://crobf.tech',
+      codeUrl: 'https://github.com/CROBF-tech/website',
       gradient: 'from-green-400 to-teal-600',
       icon: Cloud
     },
@@ -92,7 +73,7 @@ const Projects = () => {
         'Sistema de pagos integrado',
         'Optimización de rendimiento'
       ],
-      demoUrl: '#',
+      demoUrl: 'http://endiez.com',
       codeUrl: '#',
       gradient: 'from-orange-400 to-purple-600',
       icon: Zap
@@ -111,29 +92,11 @@ const Projects = () => {
         'Reducción de costos operativos',
         'Interfaz intuitiva y moderna'
       ],
-      demoUrl: '#',
+      demoUrl: 'https://unica-website.vercel.app',
       codeUrl: '#',
       gradient: 'from-orange-400 to-red-600',
       icon: Database
     },
-    {
-      title: 'FarmaGo',
-      description: 'Aplicación diseñada para facilitar la búsqueda y compra de productos farmacéuticos.',
-      image: 'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=500',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'API Integration'],
-      year: '2024',
-      status: 'Lanzado',
-      details: [
-        'Búsqueda de productos farmacéuticos',
-        'Comparación de precios entre farmacias',
-        'Localización de farmacias cercanas',
-        'Interfaz optimizada y responsive'
-      ],
-      demoUrl: '#',
-      codeUrl: '#',
-      gradient: 'from-blue-400 to-purple-600',
-      icon: Zap
-    }
   ];
 
   return (

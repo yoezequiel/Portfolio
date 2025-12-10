@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Briefcase } from 'lucide-react';
 
 const Hero = () => {
@@ -83,14 +82,14 @@ const Hero = () => {
               <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 group-hover:text-white" />
             </a>
             <a
-              href="#"
+              href="https://github.com/yoezequiel"
               className="p-3 bg-gray-800 hover:bg-gray-700 rounded-full transition-all duration-300 transform hover:scale-110 group"
               aria-label="Ver perfil de GitHub"
             >
               <Github className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 group-hover:text-white" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/yoezequiel/"
               className="p-3 bg-gray-800 hover:bg-gray-700 rounded-full transition-all duration-300 transform hover:scale-110 group"
               aria-label="Conectar en LinkedIn"
             >
