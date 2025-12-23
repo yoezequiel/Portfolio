@@ -1,5 +1,4 @@
-import React from 'react';
-import { ExternalLink, Github, Calendar, Tag, Zap, Database, Shield, Cloud } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Tag, Zap, Database, Cloud } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -41,21 +40,19 @@ const Projects = () => {
       icon: Cloud
     },
     {
-      title: 'Mobile Banking App',
-      description: 'Aplicación móvil completa para servicios bancarios desarrollada con React Native y Expo, con integración de APIs seguras.',
-      image: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=500',
-      technologies: ['React Native', 'Expo', 'TypeScript', 'Redux', 'API Integration'],
-      year: '2024',
+      title: 'CoreBiz',
+      description: 'Sistema multi-tenant para gestión empresarial con arquitectura profesional.',
+      image: 'https://images.pexels.com/photos/7172830/pexels-photo-7172830.jpeg?auto=compress&cs=tinysrgb&w=500',
+      technologies: ['Express', 'Astro', 'TypeScript', 'API Integration'],
+      year: '2025',
       status: 'Completado',
       details: [
-        'Interfaz nativa para iOS y Android',
-        'Autenticación biométrica integrada',
-        'Transacciones seguras en tiempo real',
-        'Notificaciones push personalizadas',
-        'Arquitectura escalable con Redux'
+        'Arquitectura Multi-Tenant con Service Layer Pattern',
+        'Stack Moderno Full-Stack con TypeScript',
+        'Dashboard Analítico en Tiempo Real',
       ],
-      demoUrl: '#',
-      codeUrl: '#',
+      demoUrl: 'https://corebiz-yoezequiel.vercel.app',
+      codeUrl: 'https://github.com/yoezequiel/CoreBiz',
       gradient: 'from-cyan-400 to-blue-600',
       icon: Zap
     },
