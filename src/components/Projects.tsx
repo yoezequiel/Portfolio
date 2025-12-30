@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Calendar, Tag, Zap, Database, Cloud } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Tag, Zap, Database, Cloud, Store } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -93,6 +93,24 @@ const Projects = () => {
       codeUrl: '#',
       gradient: 'from-orange-400 to-red-600',
       icon: Database
+    },
+    {
+      title: 'POS web',
+      description: 'Sistema de punto de venta web para gestión de ventas, inventario y reportes en tiempo real.',
+      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=500',
+      technologies: ['Astro', 'Node.js', 'Express', 'Turso', 'TypeScript', 'Express'],
+      year: '2025',
+      status: 'En desarrollo',
+      details: [
+        'Interfaz de usuario intuitiva',
+        'Gestión de inventario en tiempo real',
+        'Generación de reportes detallados',
+        'Integración con sistemas de pago'
+      ],
+      demoUrl: 'https://pos-yoezequiel.vercel.app',
+      codeUrl: 'https://github.com/yoezequiel/POS',
+      gradient: 'from-purple-400 to-pink-600',
+      icon: Store
     },
   ];
 
