@@ -3,7 +3,7 @@ title: 'E-commerce Android App'
 description: 'Aplicación nativa de Android desarrollada en Kotlin para plataforma de comercio electrónico con carrito de compras.'
 image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=500'
 technologies: ['Kotlin', 'Android SDK', 'Room Database', 'Retrofit', 'Material Design']
-year: '2024'
+year: '2025-2026'
 status: 'Lanzado'
 demoUrl: 'http://endiez.com'
 codeUrl: '#'
@@ -12,10 +12,56 @@ icon: 'Zap'
 ---
 
 ## Overview
-A high-performance native Android application for a retail platform. It features a seamless shopping experience with real-time inventory updates, integrated payment gateways, and personalized user profiles, all following modern Material Design principles.
-
-## Technical Challenges
-Synchronizing local state with the remote server in offline-first scenarios was complex. I utilized Kotlin Coroutines and the Room persistence library to create a robust sync engine. Ensuring smooth UI transitions and 60fps scrolling with large image catalogs required deep optimization of RecyclerView and custom image loading strategies.
-
-## Results & Impact
-The app maintained a 4.8-star rating on the Play Store during its initial launch. User engagement increased by 40% compared to the mobile web version, and mobile sales now account for 60% of the total platform revenue, significantly driving overall business growth.
+     **E-Commers Marketplace** es una plataforma de comercio electrónico de última generación diseñada
+      para conectar vendedores locales con compradores en un entorno **multi-ciudad**. A diferencia de
+      los e-commerce tradicionales, este sistema geolocaliza dinámicamente toda la experiencia de usuario
+      (productos, banners y categorías) basándose en la ubicación detectada. El objetivo principal es
+      ofrecer una infraestructura de "Marketplace como Servicio" donde la gestión de comisiones, pagos
+      divididos y logística de última milla está totalmente automatizada.
+    
+     ## Key Features
+     - **📍 Inteligencia Multi-Ciudad**: Detección automática de ubicación por IP o perfil, filtrando el
+      catálogo en tiempo real para ciudades específicas (San Rafael, General Alvear, Malargüe) mediante
+      un sistema de `CityContext` y middleware dedicado.
+     - **💰 Marketplace con Split-Payment**: Integración avanzada con MercadoPago que automatiza el
+      cobro de comisiones mediante `application_fee`, enviando el pago neto al vendedor y la comisión a
+      la plataforma de forma transparente y segura.
+     - **🔔 Ecosistema de Notificaciones Omnicanal**: Sistema robusto de alertas que combina **WhatsApp
+      Business API** (plantillas dinámicas), **Firebase Push Notifications** y dashboards administrativos
+      para mantener a vendedores y clientes informados sobre cada cambio de estado en sus pedidos.
+    - **🎡 Motor de Engagement Local**: Incluye sistemas de banners anti-repetición, sorteos por
+      referidos y lógica de precios diferenciados (descuentos por efectivo vs. tarjeta) para incentivar
+      la conversión local.
+   
+    ## Technical Challenges
+    Uno de los mayores retos fue la **re-arquitectura del sistema de pagos Marketplace**. Inicialmente,
+      la integración con MercadoPago presentaba errores de flujo al usar `collector_id` de forma manual.
+      Lo solucioné migrando a una arquitectura basada en **OAuth de vendedores**, donde cada transacción
+      utiliza el token del vendedor pero aplica una `application_fee` automatizada. Esto eliminó la
+      fricción en la validación de cuentas y garantizó que la plataforma escale sin intervención manual
+      en cada venta.
+   
+    Otro desafío técnico fue la **sincronización de estado multi-ciudad**. Lograr que un cambio de
+      ciudad en la URL (`/malargue`) se propagara instantáneamente a través de los filtros de base de
+      datos, los banners del frontend y las recomendaciones de productos requirió la implementación de un
+      Middleware de Express personalizado y un sistema de caché inteligente en el frontend con
+      `AsyncStorage` y hooks de React.
+   
+    ## Lessons Learned
+    Este proyecto reforzó la importancia de la **arquitectura orientada a la documentación oficial**.
+      Aprendí que en sistemas financieros complejos como MercadoPago, es vital seguir los flujos estándar
+      (Marketplace Flow) en lugar de construir envoltorios personalizados que pueden volverse frágiles.
+      También descubrí que la **localización granular** (SEO y contenido por ciudad) es el factor
+      diferenciador que realmente genera tracción en plataformas regionales, transformando un e-commerce
+      genérico en una herramienta comunitaria esencial.
+   
+    ## Results & Impact
+    - **Automatización del 95% de la Operación**: La gestión de comisiones y notificaciones de venta
+      ahora es totalmente autónoma, permitiendo que el administrador se enfoque en el crecimiento del
+      negocio.
+    - **Confianza del Usuario**: La implementación de códigos de verificación para delivery y
+      actualizaciones por WhatsApp redujo drásticamente las consultas de soporte sobre el estado de los
+      pedidos.
+    - **Escalabilidad Regional**: El sistema está listo para añadir nuevas ciudades en cuestión de
+      minutos, con una infraestructura técnica que soporta múltiples vendedores operando bajo sus propias
+      reglas comerciales dentro de un mismo ecosistema.

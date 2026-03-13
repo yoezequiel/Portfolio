@@ -1,9 +1,9 @@
 ---
 title: 'GitHub Metrics Engine'
 description: 'Herramienta avanzada para recolección y procesamiento de estadísticas de productividad desde la API de GitHub.'
-image: 'https://images.pexels.com/photos/25626/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=500'
+image: '/stats.png'
 technologies: ['Node.js', 'GitHub API', 'JSON Processing', 'Analytics']
-year: '2024'
+year: '2025'
 status: 'Activo'
 demoUrl: 'https://stats.crobf.tech'
 codeUrl: 'https://github.com/CROBF-tech/Stats'
@@ -11,11 +11,53 @@ gradient: 'from-blue-400 to-cyan-600'
 icon: 'Database'
 ---
 
+
 ## Overview
-A robust data harvesting tool designed to aggregate and normalize contribution data from multiple GitHub organizations. It provides a centralized dashboard for tracking developer velocity, pull request cycles, and repository health across large-scale ecosystems.
-
-## Technical Challenges
-Handling GitHub API rate limits was a primary hurdle. I implemented a sophisticated queuing system with exponential backoff and localized caching using Redis to minimize redundant API calls. Data normalization across different repository structures also required a flexible, version-tolerant schema.
-
-## Results & Impact
-Reduced the time spent on manual reporting by 90%. The engine now processes over 1,000 events daily, providing stakeholders with real-time insights into team performance and project bottlenecks, which has led to a measurable improvement in sprint planning accuracy.
+     **CROBF Git Stats** es un panel de control avanzado diseñado para visualizar y analizar el
+      rendimiento de desarrollo dentro de la organización CROBF en GitHub. El proyecto automatiza la
+      extracción de datos (commits, PRs, issues y ramas) mediante la API de GitHub y los transforma en
+      una experiencia visual interactiva. El objetivo principal es ofrecer transparencia sobre la salud
+      del código, la eficiencia del equipo y las tendencias de contribución a lo largo del tiempo.
+    
+     ## Key Features
+     - **📊 Rendimiento Individual**: Métricas detalladas por colaborador, incluyendo líneas de código
+      añadidas/eliminadas y ratio de impacto.
+     - **🚀 Ciclo de Vida (PRs & Issues)**: Seguimiento del tiempo promedio de resolución de issues y
+      tiempo de mezcla (merge) de Pull Requests.
+    - **📈 Tendencias Temporales**: Gráficos de actividad mensual que permiten observar picos de
+      trabajo y la evolución del proyecto.
+     - **🔍 Salud de Repositorios**: Identificación automática de repositorios inactivos, ramas
+      estancadas y PRs que requieren atención inmediata.
+     - **⚡ Dashboard de Alto Rendimiento**: Construido con **Astro** y **Chart.js**, garantizando una
+      carga rápida y visualizaciones interactivas.
+   
+    ## Technical Challenges
+    Uno de los mayores retos fue la **orquestación y agregación de datos masivos** desde la API de
+      GitHub. El script de backend (`github-stats.js`) realiza múltiples peticiones anidadas para
+      reconstruir la historia del proyecto sin exceder los límites de la API:
+    - **Agregación Eficiente**: Diseñé una lógica en Node.js que procesa commits, PRs e issues de forma
+      iterativa, normalizando la respuesta cruda de GitHub en un único archivo JSON
+      (`estadisticas_completas.json`).
+    - **Integración Astro + Chart.js**: El desafío fue renderizar gráficos complejos en un entorno que
+      favorece el HTML estático. Lo solucioné encapsulando la lógica de los gráficos en componentes de
+      Astro que inyectan los datos pre-procesados, manteniendo la interactividad sin sacrificar el
+      rendimiento de carga.
+    - **Manejo de Errores de API**: Implementé estrategias para gestionar errores comunes (como el
+      código 409 en repositorios vacíos) y asegurar que la generación de estadísticas no se detenga ante
+      fallos menores de red.
+   
+    ## Lessons Learned
+    - **Arquitectura de Astro**: Aprendí a utilizar la arquitectura de islas para delegar la
+      interactividad de los gráficos solo donde es necesaria.
+    - **Normalización de Datos**: Comprendí que el procesamiento previo en el backend es crítico;
+      transformar los datos antes de que lleguen al frontend redujo drásticamente la complejidad de los
+      componentes visuales.
+    - **Higiene de Git**: Al visualizar la cantidad de ramas y PRs estancados, aprendí la importancia
+      de establecer políticas claras de limpieza en los repositorios para mantener un flujo de trabajo
+      saludable.
+   
+    ## Results & Impact
+    El resultado es una herramienta que centraliza la actividad de múltiples repositorios en una sola
+      vista profesional. Gracias a métricas como el **Efficiency Chart** y el **Impact Ratio**, el equipo
+      ahora puede identificar cuellos de botella en las revisiones, reducir el tiempo de respuesta en los
+      Pull Requests y tener una visión clara y objetiva del progreso del proyecto.
