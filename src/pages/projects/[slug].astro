@@ -1,0 +1,155 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import { ExternalLink, Github, Calendar, Tag, Zap, Database, Cloud, Store, ChevronRight } from 'lucide-react';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, description, image, technologies, year, status, demoUrl, codeUrl, gradient, icon } = project.data;
+---
+
+<Layout title={`${title} | Proyecto`}>
+  <Header client:load />
+  
+  <main class="min-h-screen bg-gray-900 text-gray-100 relative overflow-hidden">
+    <!-- Background Glow -->
+    <div class={`absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b ${gradient} opacity-[0.08] blur-[120px] -z-10`}></div>
+    
+    <div class="container mx-auto px-4 pt-32 pb-20 relative">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center space-x-2 text-sm text-gray-400 mb-8 overflow-x-auto whitespace-nowrap">
+        <a href="/" class="hover:text-blue-400 transition-colors">Inicio</a>
+        <ChevronRight className="h-4 w-4 flex-shrink-0" />
+        <a href="/#proyectos" class="hover:text-blue-400 transition-colors">Proyectos</a>
+        <ChevronRight className="h-4 w-4 flex-shrink-0" />
+        <span class="text-gray-200 font-medium truncate">{title}</span>
+      </nav>
+
+      <div class="grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-8 space-y-12">
+          <div class="space-y-6">
+            <div class="flex flex-wrap items-center gap-3">
+               <span class={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r ${gradient} text-white shadow-lg shadow-blue-500/20`}>
+                {status}
+              </span>
+              <span class="flex items-center text-gray-400 text-sm">
+                <Calendar className="h-4 w-4 mr-2" />
+                {year}
+              </span>
+            </div>
+            
+            <h1 
+              class="text-4xl sm:text-6xl font-black text-white leading-tight"
+              style={`view-transition-name: title-${project.id}`}
+            >
+              {title}
+            </h1>
+            
+            <p class="text-xl text-gray-400 leading-relaxed max-w-3xl">
+              {description}
+            </p>
+          </div>
+
+          <div class="relative group">
+            <div class={`absolute -inset-1 bg-gradient-to-r ${gradient} rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000`}></div>
+            <div class="relative bg-gray-800 rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl">
+              <img
+                src={image}
+                alt={title}
+                class="w-full aspect-video object-cover"
+                style={`view-transition-name: image-${project.id}`}
+              />
+            </div>
+          </div>
+
+          <div class="prose prose-invert prose-blue max-w-none 
+            prose-headings:font-bold prose-headings:text-white
+            prose-p:text-gray-300 prose-p:leading-relaxed prose-p:text-lg
+            prose-ul:list-disc prose-li:text-gray-300">
+            <Content />
+          </div>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 sticky top-32 space-y-8 shadow-2xl">
+            <div class="flex items-center justify-between">
+               <div class={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20`}>
+                {icon === 'Database' && <Database className="h-6 w-6 text-white" />}
+                {icon === 'Cloud' && <Cloud className="h-6 w-6 text-white" />}
+                {icon === 'Store' && <Store className="h-6 w-6 text-white" />}
+                {(icon === 'Zap' || !icon) && <Zap className="h-6 w-6 text-white" />}
+              </div>
+              <div class="flex gap-3">
+                <a
+                  href={codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3 bg-gray-700/50 hover:bg-gray-700 text-white rounded-xl transition-all border border-gray-600/50"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest">Stack Tecnológico</h3>
+              <div class="flex flex-wrap gap-2">
+                {technologies.map((tech) => (
+                  <div class="flex items-center px-3 py-1.5 bg-gray-900/50 rounded-lg border border-gray-700 text-sm text-gray-300">
+                    <Tag className="h-3 w-3 mr-2 text-blue-400" />
+                    {tech}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`flex items-center justify-center w-full py-4 bg-gradient-to-r ${gradient} text-white font-bold rounded-2xl shadow-xl shadow-blue-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all`}
+            >
+              Ver Demo En Vivo
+              <ExternalLink className="h-5 w-5 ml-2" />
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111827;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+</style>

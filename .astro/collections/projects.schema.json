@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "technologies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "year": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "demoUrl": {
+      "type": "string"
+    },
+    "codeUrl": {
+      "type": "string"
+    },
+    "gradient": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "image",
+    "technologies",
+    "year",
+    "status",
+    "demoUrl",
+    "codeUrl",
+    "gradient"
+  ],
+  "additionalProperties": false
+}

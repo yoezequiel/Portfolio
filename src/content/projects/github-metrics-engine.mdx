@@ -1,0 +1,21 @@
+---
+title: 'GitHub Metrics Engine'
+description: 'Herramienta avanzada para recolección y procesamiento de estadísticas de productividad desde la API de GitHub.'
+image: 'https://images.pexels.com/photos/25626/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=500'
+technologies: ['Node.js', 'GitHub API', 'JSON Processing', 'Analytics']
+year: '2024'
+status: 'Activo'
+demoUrl: 'https://stats.crobf.tech'
+codeUrl: 'https://github.com/CROBF-tech/Stats'
+gradient: 'from-blue-400 to-cyan-600'
+icon: 'Database'
+---
+
+## Overview
+A robust data harvesting tool designed to aggregate and normalize contribution data from multiple GitHub organizations. It provides a centralized dashboard for tracking developer velocity, pull request cycles, and repository health across large-scale ecosystems.
+
+## Technical Challenges
+Handling GitHub API rate limits was a primary hurdle. I implemented a sophisticated queuing system with exponential backoff and localized caching using Redis to minimize redundant API calls. Data normalization across different repository structures also required a flexible, version-tolerant schema.
+
+## Results & Impact
+Reduced the time spent on manual reporting by 90%. The engine now processes over 1,000 events daily, providing stakeholders with real-time insights into team performance and project bottlenecks, which has led to a measurable improvement in sprint planning accuracy.
