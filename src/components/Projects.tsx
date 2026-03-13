@@ -44,8 +44,8 @@ const Projects = ({ projects }: { projects: ProjectData[] }) => {
               const Icon = (icon && ICON_MAP[icon as keyof typeof ICON_MAP]) || Zap;
               
               return (
-                <div key={project.id} className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 group hover:transform hover:scale-105">
-                  <a href={`/projects/${project.id}`} className="block">
+                <div key={project.id} className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 group hover:transform hover:scale-105 flex flex-col">
+                  <a href={`/projects/${project.id}`} className="flex-1 flex flex-col">
                     <div className="relative overflow-hidden">
                       <img
                         src={image}
@@ -77,46 +77,50 @@ const Projects = ({ projects }: { projects: ProjectData[] }) => {
                         )}
                       </div>
                     </div>
-                  </a>
-                  
-                  <div className="p-4 sm:p-6">
-                    <a href={`/projects/${project.id}`}>
+                    
+                    <div className="p-4 sm:p-6 flex-1 flex flex-col">
                       <h3 
-                        className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3"
+                        className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors"
                         style={{ viewTransitionName: `title-${project.id}` } as any}
                       >
                         {title}
                       </h3>
-                    </a>
-                    <p className="text-gray-300 text-sm mb-3 sm:mb-4 leading-relaxed">{description}</p>
-                    
-                    <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
-                      {technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full flex items-center"
-                        >
-                          <Tag className="h-2 w-2 mr-1" />
-                          {tech}
-                        </span>
-                      ))}
+                      <p className="text-gray-300 text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-2">{description}</p>
+                      
+                      <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto mb-4">
+                        {technologies.slice(0, 3).map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2 py-1 bg-gray-700 text-gray-300 text-[10px] sm:text-xs rounded-full flex items-center"
+                          >
+                            <Tag className="h-2 w-2 mr-1" />
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    
+                  </a>
+                  
+                  <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
                     <div className="flex space-x-2 sm:space-x-3">
                       <a
                         href={demoUrl}
-                        className="flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200 group flex-1 justify-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200 group/btn flex-1 justify-center"
                         aria-label={`Ver demo de ${title}`}
                       >
-                        <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover:translate-x-1 transition-transform" />
+                        <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover/btn:translate-x-1 transition-transform" />
                         Demo
                       </a>
                       <a
                         href={codeUrl}
-                        className="flex items-center px-3 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm rounded-lg transition-colors duration-200 group flex-1 justify-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-3 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm rounded-lg transition-colors duration-200 group/btn flex-1 justify-center"
                         aria-label={`Ver código de ${title}`}
                       >
-                        <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover:rotate-12 transition-transform" />
+                        <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover/btn:rotate-12 transition-transform" />
                         Código
                       </a>
                     </div>
