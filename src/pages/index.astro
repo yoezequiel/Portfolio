@@ -9,18 +9,33 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { getCollection } from 'astro:content';
+import { ArrowRight } from 'lucide-react';
 
 const allProjects = await getCollection('projects');
+const featuredProjects = allProjects.slice(0, 6);
 ---
 
-<Layout title="Mi Portfolio">
+<Layout title="Mi Portfolio | Casiano Ezequiel">
   <Header client:load />
   <main>
     <Hero client:load />
     <About client:load />
     <Skills client:load />
-    <Experience client:load />
-    <Projects projects={allProjects} client:load />
+    <Projects projects={featuredProjects} client:load />
+    
+    <!-- More Projects CTA -->
+    <div class="bg-gray-900 pb-24 px-4 text-center">
+      <div class="max-w-7xl mx-auto">
+        <a 
+          href="/projects" 
+          class="inline-flex items-center px-10 py-5 bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500/50 text-white font-bold rounded-2xl transition-all duration-300 group shadow-2xl hover:shadow-blue-500/10"
+        >
+          <span class="text-lg">Explorar galería completa</span>
+          <ArrowRight className="h-5 w-5 ml-3 group-hover:translate-x-2 transition-transform text-blue-400" />
+        </a>
+      </div>
+    </div>
+
     <Contact client:load />
   </main>
   <Footer client:load />

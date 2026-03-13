@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Projects from '../../components/Projects';
+import { ChevronRight } from 'lucide-react';
+
+const allProjects = await getCollection('projects');
+---
+
+<Layout title="Todos mis Proyectos | Portfolio">
+  <Header client:load />
+  
+  <main class="min-h-screen bg-gray-900 pt-32 pb-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center space-x-2 text-sm text-gray-400 mb-8 overflow-x-auto whitespace-nowrap">
+          <a href="/" class="hover:text-blue-400 transition-colors">Inicio</a>
+          <ChevronRight className="h-4 w-4 flex-shrink-0" />
+          <span class="text-gray-200 font-medium">Todos los Proyectos</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl sm:text-5xl font-black text-white mb-4">
+            Galería de Proyectos
+          </h1>
+          <p class="text-xl text-gray-400 max-w-3xl">
+            Explora mi trayectoria completa a través de las soluciones tecnológicas que he desarrollado.
+          </p>
+        </div>
+
+        <!-- Reutilizamos el componente de Projects pasándole todos -->
+        <Projects projects={allProjects} client:load />
+      </div>
+    </div>
+  </main>
+
+  <Footer client:load />
+</Layout>

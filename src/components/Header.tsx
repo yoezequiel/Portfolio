@@ -15,7 +15,6 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Inicio', href: '#inicio' },
     { name: 'Sobre mí', href: '#sobre-mi' },
     { name: 'Proyectos', href: '#proyectos' },
     { name: 'Contacto', href: '#contacto' },
@@ -27,12 +26,12 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-4 py-3 sm:py-4">
         <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Code2 className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />
+          <a href="/#inicio" className="flex items-center space-x-2 group">
+            <Code2 className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400 group-hover:rotate-12 transition-transform" />
             <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Casiano Ezequiel
             </span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

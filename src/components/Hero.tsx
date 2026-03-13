@@ -28,15 +28,12 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2">
-            Desarrollador{' '}
-            <span className="text-blue-400 font-semibold">Fullstack</span> especializado en{' '}
-            <span className="text-purple-400 font-semibold">infraestructura Linux</span> y{' '}
-            <span className="text-green-400 font-semibold">automatización de sistemas</span>
+            <span className="text-blue-400 font-semibold">Construyo software completo</span>: desde la interfaz hasta la infraestructura.
           </p>
           
           <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
-            Dominio completo del stack tecnológico: desde interfaces React y Astro hasta APIs robustas con Node.js y Python. 
-            Fundador de CROBF, autodidacta apasionado creando soluciones end-to-end innovadoras y escalables.
+            Desarrollador Full-Stack enfocado en construir productos digitales completos: desde la interfaz hasta la infraestructura. 
+            Trabajo con React, Node.js, Python y sistemas Linux, creando plataformas escalables y automatizadas listas para producción.
           </p>
 
           {/* Key Highlights */}

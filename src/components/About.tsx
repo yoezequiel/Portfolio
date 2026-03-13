@@ -16,7 +16,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
             <div className="space-y-6">
               <div className="bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-700">
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Resumen Ejecutivo</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Sobre Mi</h3>
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-3 sm:mb-4">
                   Desarrollador de Software especializado en la creación de soluciones web modernas y automatizadas. 
                   Mi enfoque combina la excelencia técnica con un criterio empresarial sólido, desarrollando 
