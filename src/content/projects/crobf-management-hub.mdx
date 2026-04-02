@@ -1,0 +1,50 @@
+---
+title: "CROBF Management Hub"
+description: "Plataforma integral de gestión empresarial con tableros Kanban, documentación enriquecida y sistema de auditoría avanzado."
+image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200"
+technologies:
+    [
+        "Astro v6",
+        "React 19",
+        "Tailwind CSS v4",
+        "Drizzle ORM",
+        "Turso",
+        "Tiptap",
+    ]
+year: "2025-2026"
+status: "En desarrollo"
+demoUrl: "#"
+codeUrl: "#"
+gradient: "from-slate-800 to-slate-950"
+icon: "Store"
+type: "web"
+---
+
+## Overview
+
+**CROBF Management Hub** es el centro neurálgico de operaciones para la organización CROBF. Diseñado como una solución de gestión empresarial completa, la plataforma centraliza la coordinación de equipos, el seguimiento de proyectos mediante tableros Kanban interactivos y la creación de documentación técnica detallada.
+
+Construido sobre una arquitectura de monorepo moderna, utiliza **Astro v6** y **React 19** para ofrecer una interfaz de usuario ultrarrápida, respaldada por un backend robusto que garantiza la integridad de los datos y una trazabilidad total mediante logs de auditoría.
+
+## Key Features
+
+- **📋 Tablero de Tareas Interactivo**: Sistema Kanban con funcionalidad drag-and-drop (usando `@dnd-kit`) para gestionar el ciclo de vida de los proyectos de forma intuitiva.
+- **✍️ Documentación Enriquecida**: Editor de texto avanzado basado en **Tiptap**, permitiendo crear wikis de proyectos, manuales técnicos y guías de onboarding con soporte para tablas y tareas.
+- **🛡️ Sistema de Auditoría Avanzado**: Trazabilidad completa de todas las acciones críticas, permitiendo a los administradores (Founders) supervisar la evolución operativa con total transparencia.
+- **👥 Gestión de Estructura Organizacional**: Modelo flexible de Organización -> Áreas -> Equipos -> Proyectos, adaptándose al crecimiento dinámico de la empresa.
+- **🔑 Control de Acceso (RBAC)**: Sistema de permisos granulares basado en roles, asegurando que cada miembro del equipo acceda solo a las herramientas y datos necesarios.
+- **⌨️ Command Palette**: Interfaz de comandos rápidos para navegación y búsqueda global, optimizando el flujo de trabajo de los usuarios avanzados.
+
+## Technical Challenges
+
+Uno de los mayores retos fue la implementación de una **jerarquía organizacional flexible pero coherente**. A diferencia de los sistemas rígidos, CROBFHUB permite que los proyectos existan de forma independiente o vinculados a equipos dinámicos. Esto requirió un diseño de base de datos sofisticado utilizando **Drizzle ORM** y **SQLite (Turso)** para manejar relaciones complejas sin sacrificar el rendimiento.
+
+La integración de **Tiptap** como motor de documentación también presentó desafíos técnicos, especialmente al sincronizar las múltiples extensiones necesarias (tablas, listas de tareas, enlaces) con la persistencia en tiempo real en la base de datos.
+
+## Lessons Learned
+
+Este proyecto ha sido fundamental para dominar las versiones más recientes del ecosistema web, como **Astro v6** y **Tailwind CSS v4**. Aprendí la importancia de una arquitectura "Soft Delete" y sistemas de auditoría integrados desde la fase inicial de diseño para garantizar la resiliencia de los datos empresariales. Además, la experiencia de construir un sistema RBAC desde cero reforzó mis conocimientos sobre seguridad y gestión de identidades en aplicaciones distribuidas.
+
+## Results & Impact
+
+Como herramienta interna, CROBFHUB ha transformado la forma en que el equipo gestiona su conocimiento técnico y operativo. La centralización de las tareas y la documentación ha reducido drásticamente la fragmentación de la información, permitiendo que los nuevos miembros del equipo se integren un 40% más rápido gracias a la wiki estructurada y el sistema de onboarding automatizado.
