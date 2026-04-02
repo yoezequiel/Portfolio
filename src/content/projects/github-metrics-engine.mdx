@@ -1,24 +1,25 @@
 ---
-title: 'GitHub Metrics Engine'
-description: 'Herramienta avanzada para recolección y procesamiento de estadísticas de productividad desde la API de GitHub.'
-image: '/stats.png'
-technologies: ['Node.js', 'GitHub API', 'JSON Processing', 'Analytics']
-year: '2025'
-status: 'Activo'
-demoUrl: 'https://stats.crobf.tech'
-codeUrl: 'https://github.com/CROBF-tech/Stats'
-gradient: 'from-blue-400 to-cyan-600'
-icon: 'Database'
+title: "GitHub Metrics Engine"
+description: "Herramienta avanzada para recolección y procesamiento de estadísticas de productividad desde la API de GitHub."
+image: "/stats.png"
+technologies: ["Node.js", "GitHub API", "JSON Processing", "Analytics"]
+year: "2025"
+status: "Activo"
+demoUrl: "https://stats.crobf.tech"
+codeUrl: "https://github.com/CROBF-tech/Stats"
+gradient: "from-blue-400 to-cyan-600"
+icon: "Database"
+type: "web"
 ---
 
-
 ## Overview
+
      **CROBF Git Stats** es un panel de control avanzado diseñado para visualizar y analizar el
       rendimiento de desarrollo dentro de la organización CROBF en GitHub. El proyecto automatiza la
       extracción de datos (commits, PRs, issues y ramas) mediante la API de GitHub y los transforma en
       una experiencia visual interactiva. El objetivo principal es ofrecer transparencia sobre la salud
       del código, la eficiencia del equipo y las tendencias de contribución a lo largo del tiempo.
-    
+
      ## Key Features
      - **📊 Rendimiento Individual**: Métricas detalladas por colaborador, incluyendo líneas de código
       añadidas/eliminadas y ratio de impacto.
@@ -30,7 +31,7 @@ icon: 'Database'
       estancadas y PRs que requieren atención inmediata.
      - **⚡ Dashboard de Alto Rendimiento**: Construido con **Astro** y **Chart.js**, garantizando una
       carga rápida y visualizaciones interactivas.
-   
+
     ## Technical Challenges
     Uno de los mayores retos fue la **orquestación y agregación de datos masivos** desde la API de
       GitHub. El script de backend (`github-stats.js`) realiza múltiples peticiones anidadas para
@@ -45,7 +46,7 @@ icon: 'Database'
     - **Manejo de Errores de API**: Implementé estrategias para gestionar errores comunes (como el
       código 409 en repositorios vacíos) y asegurar que la generación de estadísticas no se detenga ante
       fallos menores de red.
-   
+
     ## Lessons Learned
     - **Arquitectura de Astro**: Aprendí a utilizar la arquitectura de islas para delegar la
       interactividad de los gráficos solo donde es necesaria.
@@ -55,7 +56,7 @@ icon: 'Database'
     - **Higiene de Git**: Al visualizar la cantidad de ramas y PRs estancados, aprendí la importancia
       de establecer políticas claras de limpieza en los repositorios para mantener un flujo de trabajo
       saludable.
-   
+
     ## Results & Impact
     El resultado es una herramienta que centraliza la actividad de múltiples repositorios en una sola
       vista profesional. Gracias a métricas como el **Efficiency Chart** y el **Impact Ratio**, el equipo

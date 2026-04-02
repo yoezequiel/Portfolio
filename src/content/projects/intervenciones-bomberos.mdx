@@ -1,0 +1,52 @@
+---
+title: "Intervenciones Bomberos"
+description: "Gestión Digital y Reportes con IA para Servicios de Emergencia."
+image: "/Intervenciones/1.jpeg"
+technologies:
+    ["React Native", "Expo", "SQLite", "Google Gemini AI", "TypeScript"]
+year: "2025-2026"
+status: "Lanzado"
+demoUrl: ""
+codeUrl: "https://github.com/yoezequiel/Intervenciones"
+gradient: "from-red-600 to-orange-500"
+icon: "Zap"
+gallery:
+    [
+        "/Intervenciones/1.jpeg",
+        "/Intervenciones/2.jpeg",
+        "/Intervenciones/3.jpeg",
+        "/Intervenciones/4.jpeg",
+    ]
+type: "app"
+---
+
+## Overview
+
+**Intervenciones Bomberos** es una aplicación móvil robusta diseñada para digitalizar el flujo de trabajo crítico de los cuerpos de bomberos. La solución permite a los efectivos registrar cada detalle de un servicio de emergencia directamente en el campo, incluso sin conexión a internet. Su propuesta de valor principal reside en la automatización de la redacción técnica, utilizando inteligencia artificial para transformar notas de campo rápidas en informes profesionales estructurados bajo estándares operativos.
+
+Desarrollada con **React Native (Expo)** y una arquitectura de persistencia local en **SQLite**, la app garantiza que la información nunca se pierda y esté disponible instantáneamente para su exportación en PDF.
+
+## Key Features
+
+- **Registro Cronológico Preciso**: Captura de tiempos de llamado, salida y regreso con un solo toque ("Botones Ahora").
+- **Geolocalización Automática**: Integración con GPS para registrar coordenadas exactas y direcciones del siniestro.
+- **Formularios Estructurados por Secciones**: Gestión de tipos de intervención, servicios presentes (Policía, Ambulancia) y víctimas.
+- **Gestión Multimedia**: Captura y almacenamiento local de fotografías como evidencia técnica.
+- **Generación de Informes con IA:** Motor de procesamiento de lenguaje natural que redacta la narrativa técnica en tercera persona.
+- **Exportación Multi-formato**: Generación de documentos PDF profesionales.
+- **Arquitectura Offline-First**: Funcionamiento total sin datos móviles, sincronizando con la API de IA solo al recuperar la conectividad.
+
+## Technical Challenges
+
+Uno de los mayores retos fue diseñar un esquema en **SQLite** que soporte estructuras complejas manteniendo el rendimiento en tiempo real. Además, se trabajó intensamente en la **estandarización del Prompt de IA** al "estilo bomberil" (narrativa continua, mención específica de móviles y jerarquías).
+
+## Lessons Learned
+
+Este proyecto reforzó que la **simplicidad gana en emergencias**. La implementación de botones de captura rápida redujo drásticamente la carga cognitiva durante el estrés de la intervención. También aprendí la importancia de implementar estrategias de _fallback_ para la IA, asegurando que la app siga siendo útil incluso si la API de IA no está disponible.
+
+## Results & Impact
+
+- **Reducción del 95% en Tiempo Administrativo**: La redacción de informes pasó de ~20 minutos a menos de 30 segundos.
+- **Estandarización Profesional**: Se eliminaron las discrepancias de estilo entre diferentes efectivos.
+- **Trazabilidad Total**: Todas las intervenciones cuentan con coordenadas GPS y evidencia fotográfica vinculada.
+- **Costo Operativo Cero**: Uso eficiente de modelos ligeros y almacenamiento local para una escalabilidad sin costos fijos.

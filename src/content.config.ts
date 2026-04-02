@@ -10,10 +10,12 @@ const projects = defineCollection({
     technologies: z.array(z.string()),
     year: z.string(),
     status: z.string(),
-    demoUrl: z.string(),
-    codeUrl: z.string(),
+    demoUrl: z.string().optional(),
+    codeUrl: z.string().optional(),
     gradient: z.string(),
     icon: z.string().optional(),
+    gallery: z.array(z.string()).optional(),
+    type: z.enum(['app', 'web']).default('web'),
   }),
 });
 

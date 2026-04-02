@@ -1,24 +1,34 @@
 ---
-title: 'E-commerce Multiplatform'
-description: 'Aplicación multiplataforma desarrollada con React Native y Expo para Android, iOS y Web, integrada con un marketplace multi-ciudad.'
-image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=500'
-technologies: ['React Native', 'Expo', 'TypeScript', 'MercadoPago SDK', 'Firebase', 'Express.js']
-year: '2025-2026'
-status: 'Lanzado'
-demoUrl: 'http://endiez.com'
-codeUrl: '#'
-gradient: 'from-orange-400 to-purple-600'
-icon: 'Store'
+title: "E-commerce Multiplatform"
+description: "Aplicación multiplataforma desarrollada con React Native y Expo para Android, iOS y Web, integrada con un marketplace multi-ciudad."
+image: "/Endiez/1.png"
+technologies:
+    [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "MercadoPago SDK",
+        "Firebase",
+        "Express.js",
+    ]
+year: "2025-2026"
+status: "Lanzado"
+demoUrl: "http://endiez.com"
+codeUrl: ""
+gradient: "from-orange-400 to-red-600"
+icon: "Store"
+type: "web"
 ---
 
 ## Overview
+
      **E-Commerce Marketplace** es una plataforma de comercio electrónico de última generación diseñada
       para conectar vendedores locales con compradores en un entorno **multi-ciudad**. A diferencia de
       los e-commerce tradicionales, este sistema geolocaliza dinámicamente toda la experiencia de usuario
       (productos, banners y categorías) basándose en la ubicación detectada. El objetivo principal es
       ofrecer una infraestructura de "Marketplace como Servicio" donde la gestión de comisiones, pagos
       divididos y logística de última milla está totalmente automatizada.
-    
+
      ## Key Features
      - **📍 Inteligencia Multi-Ciudad**: Detección automática de ubicación por IP o perfil, filtrando el
       catálogo en tiempo real para ciudades específicas (San Rafael, General Alvear, Malargüe) mediante
@@ -32,7 +42,7 @@ icon: 'Store'
     - **🎡 Motor de Engagement Local**: Incluye sistemas de banners anti-repetición, sorteos por
       referidos y lógica de precios diferenciados (descuentos por efectivo vs. tarjeta) para incentivar
       la conversión local.
-   
+
     ## Technical Challenges
     Uno de los mayores retos fue la **re-arquitectura del sistema de pagos Marketplace**. Inicialmente,
       la integración con MercadoPago presentaba errores de flujo al usar `collector_id` de forma manual.
@@ -40,13 +50,13 @@ icon: 'Store'
       utiliza el token del vendedor pero aplica una `application_fee` automatizada. Esto eliminó la
       fricción en la validación de cuentas y garantizó que la plataforma escale sin intervención manual
       en cada venta.
-   
+
     Otro desafío técnico fue la **sincronización de estado multi-ciudad**. Lograr que un cambio de
       ciudad en la URL (`/malargue`) se propagara instantáneamente a través de los filtros de base de
       datos, los banners del frontend y las recomendaciones de productos requirió la implementación de un
       Middleware de Express personalizado y un sistema de caché inteligente en el frontend con
       `AsyncStorage` y hooks de React.
-   
+
     ## Lessons Learned
     Este proyecto reforzó la importancia de la **arquitectura orientada a la documentación oficial**.
       Aprendí que en sistemas financieros complejos como MercadoPago, es vital seguir los flujos estándar
@@ -54,7 +64,7 @@ icon: 'Store'
       También descubrí que la **localización granular** (SEO y contenido por ciudad) es el factor
       diferenciador que realmente genera tracción en plataformas regionales, transformando un e-commerce
       genérico en una herramienta comunitaria esencial.
-   
+
     ## Results & Impact
     - **Automatización del 95% de la Operación**: La gestión de comisiones y notificaciones de venta
       ahora es totalmente autónoma, permitiendo que el administrador se enfoque en el crecimiento del

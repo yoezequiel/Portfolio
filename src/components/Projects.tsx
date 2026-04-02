@@ -9,10 +9,11 @@ interface ProjectData {
     technologies: string[];
     year: string;
     status: string;
-    demoUrl: string;
-    codeUrl: string;
+    demoUrl?: string;
+    codeUrl?: string;
     gradient: string;
     icon?: string;
+    type?: 'app' | 'web';
   };
 }
 
@@ -40,7 +41,7 @@ const Projects = ({ projects }: { projects: ProjectData[] }) => {
 
           <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => {
-              const { title, description, image, technologies, year, status, demoUrl, codeUrl, gradient, icon } = project.data;
+              const { title, description, image, technologies, year, status, demoUrl, codeUrl, gradient, icon, type } = project.data;
               const Icon = (icon && ICON_MAP[icon as keyof typeof ICON_MAP]) || Zap;
               
               return (
@@ -61,7 +62,14 @@ const Projects = ({ projects }: { projects: ProjectData[] }) => {
                         </div>
                       </div>
                       
-                      <div className="absolute top-3 sm:top-4 right-3 sm:right-4 flex flex-col space-y-2">
+                      <div className="absolute top-3 sm:top-4 right-3 sm:right-4 flex flex-col space-y-2 items-end">
+                        {type && (
+                          <div className="bg-blue-500/80 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full border border-blue-400/30">
+                            <span className="text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                              {type === 'app' ? '📱 App' : '🌐 Web'}
+                            </span>
+                          </div>
+                        )}
                         {year && (
                           <div className="bg-black/50 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
                             <div className="flex items-center space-x-1 text-white text-xs sm:text-sm">
@@ -101,30 +109,36 @@ const Projects = ({ projects }: { projects: ProjectData[] }) => {
                     </div>
                   </a>
                   
-                  <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
-                    <div className="flex space-x-2 sm:space-x-3">
-                      <a
-                        href={demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200 group/btn flex-1 justify-center"
-                        aria-label={`Ver demo de ${title}`}
-                      >
-                        <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover/btn:translate-x-1 transition-transform" />
-                        Demo
-                      </a>
-                      <a
-                        href={codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center px-3 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm rounded-lg transition-colors duration-200 group/btn flex-1 justify-center"
-                        aria-label={`Ver código de ${title}`}
-                      >
-                        <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover/btn:rotate-12 transition-transform" />
-                        Código
-                      </a>
+                  {((demoUrl && demoUrl !== '#') || (codeUrl && codeUrl !== '#')) && (
+                    <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
+                      <div className="flex space-x-2 sm:space-x-3">
+                        {demoUrl && demoUrl !== '#' && (
+                          <a
+                            href={demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200 group/btn flex-1 justify-center"
+                            aria-label={`Ver demo de ${title}`}
+                          >
+                            <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover/btn:translate-x-1 transition-transform" />
+                            Demo
+                          </a>
+                        )}
+                        {codeUrl && codeUrl !== '#' && (
+                          <a
+                            href={codeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-3 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm rounded-lg transition-colors duration-200 group/btn flex-1 justify-center"
+                            aria-label={`Ver código de ${title}`}
+                          >
+                            <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover/btn:rotate-12 transition-transform" />
+                            Código
+                          </a>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               );
             })}
