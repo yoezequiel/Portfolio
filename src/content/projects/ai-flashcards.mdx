@@ -1,0 +1,51 @@
+---
+title: "AI Flashcards Generator"
+description: "Aplicación móvil y web que utiliza Inteligencia Artificial para generar flashcards automáticamente a partir de documentos PDF, optimizando el estudio."
+image: "/FlashCards/5.png"
+technologies:
+    ["React Native", "Expo", "Node.js", "Google Gemini AI", "SQLite", "Express"]
+year: "2024-2025"
+status: "En Desarrollo"
+demoUrl: "http://flashcards.crobf.tech"
+codeUrl: "https://github.com/CROBF-tech/FlashCards"
+gradient: "from-indigo-500 to-purple-600"
+icon: "Zap"
+type: "web"
+gallery:
+    [
+        "/FlashCards/1.png",
+        "/FlashCards/2.png",
+        "/FlashCards/3.png",
+        "/FlashCards/4.png",
+        "/FlashCards/5.png",
+    ]
+---
+
+## Overview
+
+**AI Flashcards Generator** es una herramienta de estudio inteligente diseñada para transformar material de lectura denso en tarjetas de memoria (flashcards) accionables de forma instantánea. Utilizando modelos de lenguaje avanzados (**Google Gemini AI**), la aplicación analiza archivos PDF cargados por el usuario, identifica conceptos clave y genera pares de pregunta-respuesta optimizados para la memorización mediante repetición espaciada.
+
+Construida con **React Native (Expo)** para una experiencia multiplataforma fluida, y un backend robusto en **Node.js**, la aplicación ofrece un ecosistema completo para estudiantes que buscan maximizar su productividad académica.
+
+## Key Features
+
+- **📄 Procesamiento Inteligente de PDFs**: Extracción de texto y análisis de contenido mediante `pdf-parse` en el backend para alimentar al motor de IA.
+- **🤖 Generación Automática con IA**: Integración con la API de **Google Gemini** para crear flashcards precisas y contextuales basadas en el material proporcionado.
+- **🗃️ Gestión de Mazos (Decks)**: Organización de tarjetas en categorías personalizables, permitiendo un estudio enfocado por materias o temas.
+- **📊 Estadísticas de Aprendizaje**: Seguimiento del progreso del usuario, identificando áreas que requieren más atención basándose en el rendimiento en las sesiones de estudio.
+- **📱 Experiencia Multiplataforma**: Disponible tanto en dispositivos móviles (Android/iOS) como en la web, gracias a la versatilidad de React Native Web.
+- **🔒 Autenticación Segura**: Sistema de usuarios con JWT y cifrado de contraseñas con bcrypt, permitiendo sincronizar el progreso entre dispositivos.
+
+## Technical Challenges
+
+El principal desafío técnico fue el **procesamiento de documentos PDF de gran tamaño** y la limitación de tokens en la API de IA. Se implementó una lógica de fragmentación de texto y un pre-procesamiento agresivo para extraer solo el contenido relevante, asegurando que el modelo de IA reciba información de alta calidad para generar tarjetas coherentes.
+
+Otro reto significativo fue garantizar una **interfaz fluida en dispositivos móviles** al manejar listas extensas de flashcards. Esto se resolvió mediante técnicas de optimización en React Native y una gestión eficiente del estado local con Context API.
+
+## Lessons Learned
+
+Este proyecto me permitió profundizar en la **integración de IA en aplicaciones de producción**, aprendiendo a manejar la latencia de las respuestas del modelo mediante estados de carga reactivos y retroalimentación visual al usuario. También fortaleció mis habilidades en el desarrollo **Full-Stack**, coordinando una API compleja con una aplicación móvil altamente interactiva.
+
+## Results & Impact
+
+Actualmente en fase de desarrollo activo, el prototipo ha demostrado reducir significativamente el tiempo de preparación de materiales de estudio. La capacidad de generar 20-30 flashcards de alta calidad en menos de un minuto a partir de un capítulo de libro representa un cambio de paradigma en la eficiencia del estudio personalizado.

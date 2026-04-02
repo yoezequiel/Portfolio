@@ -49,7 +49,9 @@ const isApp = type === 'app';
                 {status}
               </span>
               <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-gray-800 text-gray-300 border border-gray-700">
-                {type === 'app' ? '📱 App Móvil' : '🌐 Sitio Web'}
+                {technologies.some(t => t.includes('Expo') || t.includes('React Native')) 
+                  ? '📱 App & 🌐 Web (Multiplataforma)' 
+                  : type === 'app' ? '📱 App Móvil' : '🌐 Sitio Web'}
               </span>
               <span class="flex items-center text-gray-400 text-sm">
                 <Calendar className="h-4 w-4 mr-2" />

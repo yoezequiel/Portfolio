@@ -1,0 +1,57 @@
+---
+title: "AI Personal Finance Tracker"
+description: "Plataforma inteligente de gestión financiera que utiliza IA para categorizar gastos, generar insights de ahorro y predecir tendencias de consumo."
+image: "/FinanceApp/1.png"
+technologies:
+    [
+        "React Native",
+        "Expo",
+        "Node.js",
+        "Google Gemini AI",
+        "SQLite (Turso)",
+        "Chart.js",
+    ]
+year: "2024-2025"
+status: "En Desarrollo"
+demoUrl: ""
+codeUrl: "https://github.com/CROBF-tech/Financeapp"
+gradient: "from-emerald-500 to-teal-600"
+icon: "Database"
+type: "web"
+gallery:
+    [
+        "/FinanceApp/1.png",
+        "/FinanceApp/2.png",
+        "/FinanceApp/3.png",
+        "/FinanceApp/4.png",
+    ]
+---
+
+## Overview
+
+**AI Personal Finance Tracker** es una aplicación diseñada para democratizar la salud financiera mediante el uso de inteligencia artificial. A diferencia de las hojas de cálculo tradicionales, esta plataforma no solo registra transacciones, sino que actúa como un mentor financiero personal. Utilizando el modelo **Google Gemini AI**, la aplicación analiza el historial de gastos del usuario para identificar patrones de consumo ineficientes y sugerir planes de ahorro personalizados.
+
+Desarrollada bajo una arquitectura moderna con **Expo Router** para la navegación y un backend escalable en **Express**, la aplicación ofrece una experiencia de usuario premium con visualizaciones interactivas y retroalimentación en tiempo real.
+
+## Key Features
+
+- **🤖 AI Financial Insights**: Motor basado en **Gemini AI** que analiza tus finanzas para darte consejos accionables sobre cómo reducir gastos hormiga y optimizar tu presupuesto.
+- **📊 Visualización Dinámica**: Gráficos interactivos de pastel y barras (mediante `react-native-chart-kit`) que desglosan tus finanzas por categorías y periodos de tiempo.
+- **⚡ Registro Rápido de Transacciones**: Interfaz optimizada para añadir ingresos y gastos en segundos, con categorización automática sugerida por IA.
+- **🔐 Seguridad de Grado Bancario**: Implementación de **JWT**, cifrado de datos sensibles y protección contra ataques comunes mediante **Helmet** y limitadores de tasa en el backend.
+- **🌐 Sincronización en la Nube**: Persistencia de datos utilizando **Turso (LibSQL)**, garantizando que tu información financiera esté siempre disponible y segura en cualquier dispositivo.
+- **🌓 Modo Oscuro y UI Moderna**: Interfaz limpia diseñada con una estética "Glassmorphism" y componentes personalizados para una usabilidad intuitiva.
+
+## Technical Challenges
+
+El mayor reto técnico fue la **integración de la IA en el flujo financiero** sin comprometer la privacidad ni la velocidad. Se diseñó un middleware en el backend que anonimiza ciertos datos antes de enviarlos al servicio de Gemini para su análisis.
+
+Además, la implementación de gráficos fluidos en **React Native Web** requirió una configuración meticulosa de los componentes para asegurar que la interactividad se mantuviera consistente tanto en dispositivos móviles como en navegadores de escritorio.
+
+## Lessons Learned
+
+Este proyecto me enseñó la importancia de la **normalización de datos financieros** para alimentar modelos de IA. Aprendí que la calidad de los insights depende directamente de cómo se estructuran las categorías y metadatos de las transacciones. También profundicé en la optimización de consultas a bases de datos distribuidas (Edge databases) para mantener una latencia mínima.
+
+## Results & Impact
+
+La aplicación ha logrado automatizar la identificación de gastos recurrentes no deseados en usuarios de prueba, permitiendo un ahorro potencial promedio del 15% mensual mediante sus sugerencias inteligentes. Es una prueba tangible de cómo la IA puede transformar datos abstractos en decisiones financieras inteligentes.

@@ -66,7 +66,9 @@ const Projects = ({ projects }: { projects: ProjectData[] }) => {
                         {type && (
                           <div className="bg-blue-500/80 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full border border-blue-400/30">
                             <span className="text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-                              {type === 'app' ? '📱 App' : '🌐 Web'}
+                              {technologies.some(t => t.includes('Expo') || t.includes('React Native')) 
+                                ? '📱 App & 🌐 Web' 
+                                : type === 'app' ? '📱 App' : '🌐 Web'}
                             </span>
                           </div>
                         )}
