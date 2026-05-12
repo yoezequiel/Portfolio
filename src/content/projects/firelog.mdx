@@ -1,0 +1,57 @@
+---
+title: "FireLog"
+description: "App móvil offline para digitalizar intervenciones de emergencia y generar informes técnicos con IA."
+image: "/Intervenciones/1.jpeg"
+technologies:
+    ["React Native", "Expo", "SQLite", "Google Gemini AI", "Expo Print", "Expo Location"]
+year: "2025-2026"
+status: "Lanzado"
+demoUrl: ""
+codeUrl: "https://github.com/yoezequiel/Intervenciones"
+gradient: "from-red-600 to-orange-500"
+icon: "Zap"
+gallery:
+    [
+        "/Intervenciones/1.jpeg",
+        "/Intervenciones/2.jpeg",
+        "/Intervenciones/3.jpeg",
+        "/Intervenciones/4.jpeg",
+    ]
+type: "app"
+---
+
+## Overview
+
+**Intervenciones Bomberos** es una aplicación móvil multiplataforma (Android e iOS) diseñada para digitalizar el flujo de trabajo completo de los cuerpos de bomberos. Permite a los efectivos registrar cada detalle de un servicio de emergencia directamente en el campo, incluso sin conexión a internet. Su propuesta de valor central es la automatización de la redacción técnica: usando inteligencia artificial, transforma notas de campo rápidas en informes profesionales con lenguaje bomberil argentino estandarizado.
+
+La app está construida con **React Native (Expo)** y una arquitectura **Offline-First** basada en **SQLite**, garantizando que la información nunca se pierda. Incluye también un módulo de **Comunicaciones** para registrar llamadas entrantes y seguir su estado operativo en tiempo real.
+
+## Key Features
+
+- **Registro Cronológico Preciso**: Captura de tiempos de llamado, salida y regreso con un solo toque ("Botones Ahora").
+- **Geolocalización Automática**: Integración con GPS para registrar coordenadas exactas y dirección del siniestro.
+- **Módulo de Comunicaciones**: Registro de llamadas entrantes con estados operativos (`Recibido`, `Reportado`, `Desplazado`, `Sin desplazamiento`), búsqueda y paginación.
+- **Formularios por Secciones (Acordeón)**: Gestión estructurada de tipos de intervención, servicios intervinientes (Policía, Ambulancia, Defensa Civil), testigos y víctimas.
+- **Gestión Multimedia**: Captura directa con cámara y selección desde galería; almacenamiento local de fotos como evidencia técnica.
+- **Generación de Informes con IA**: Motor de IA que redacta la narrativa en tercera persona con estilo bomberil argentino (narrativa continua, mención de móviles, jerarquías, "se retorna a base").
+- **Selector de Modelos Gemini**: Panel de configuración que permite elegir entre múltiples versiones de Gemini (2.0 Flash, 2.5 Pro, 3 Flash Preview, etc.) y probarlos directamente desde la app.
+- **Fallback Automático**: Si la API de IA no está disponible, se genera un informe local básico para garantizar continuidad operativa.
+- **Exportación Multi-formato**: Generación de PDFs profesionales (`expo-print`), copia al portapapeles y compartir por WhatsApp, email, Drive, etc.
+- **Modo Oscuro**: Soporte completo de tema claro/oscuro configurable desde la pantalla de ajustes.
+- **Arquitectura Offline-First**: Funcionamiento total sin datos móviles; la IA se conecta solo al recuperar la conectividad.
+
+## Technical Challenges
+
+El mayor reto fue diseñar un esquema en **SQLite** que soporte estructuras complejas (víctimas, testigos, servicios como JSON embebido) manteniendo rendimiento en tiempo real en campo. También se trabajó intensamente en la **estandarización del Prompt de IA** para el "estilo bomberil argentino": narrativa continua, mención específica de móviles, jerarquías y fórmulas operativas. Además, implementar un **sistema de configuración persistente** (API key, modelo Gemini, tema) directamente en SQLite permitió eliminar dependencia de archivos `.env` en producción.
+
+## Lessons Learned
+
+La **simplicidad gana en emergencias**: los botones de captura rápida redujeron drásticamente la carga cognitiva durante el estrés de la intervención. Aprendí también que el **fallback de IA** es tan importante como la IA misma — la app debe ser funcional incluso sin conectividad o API key. El módulo de Comunicaciones surgió de una necesidad real: los bomberos necesitaban registrar no solo lo que pasa en el lugar, sino también el flujo de despacho desde la central.
+
+## Results & Impact
+
+- **Reducción del 95% en Tiempo Administrativo**: La redacción de informes pasó de ~20 minutos a menos de 30 segundos.
+- **Estandarización Profesional**: Se eliminaron las discrepancias de estilo entre diferentes efectivos.
+- **Trazabilidad Total**: Todas las intervenciones cuentan con coordenadas GPS, evidencia fotográfica vinculada y registro de comunicaciones.
+- **Flexibilidad de IA**: El selector de modelos permite al cuerpo elegir entre velocidad (Flash) y capacidad (Pro) según el presupuesto de API.
+- **Costo Operativo Controlado**: Almacenamiento 100% local con IA opcional; sin costos fijos para operaciones sin internet.
