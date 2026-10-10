@@ -1,0 +1,50 @@
+---
+title: "Eva"
+description: "App de prevención que automatiza el \"avisame cuando llegues\": si no confirmás que llegaste bien, alerta sola a tus contactos de confianza con tu ubicación."
+image: "/Eva/landing.jpg"
+technologies:
+    [
+        "React Native",
+        "Expo SDK 54",
+        "TypeScript",
+        "Express",
+        "Prisma",
+        "Turso",
+        "Cloudflare Workers",
+        "Vitest",
+        "Astro",
+    ]
+year: "2026"
+status: "MVP funcional"
+demoUrl: "https://eva.crobf.tech"
+gradient: "from-orange-500 to-stone-800"
+icon: "Shield"
+order: 8
+type: "app"
+---
+
+## Overview
+
+**Eva** es una aplicación gratuita de prevención pensada para automatizar el clásico **"avisame cuando llegues"**. Antes de salir, el usuario inicia una protección con un horario de llegada. Si todo sale bien, confirma y la alerta se cancela. Si no puede hacerlo, Eva avisa automáticamente a sus contactos de confianza y les comparte la información necesaria para actuar rápido.
+
+No reemplaza a los servicios de emergencia: su objetivo es reducir el tiempo que pasa hasta que alguien nota que algo no va bien.
+
+## Key Features
+
+- **⏱️ Protecciones con Temporizador**: El usuario define destino, información extra y el momento en que debe confirmar.
+- **🔔 Protocolo de Alerta Escalonado**: Aviso previo, vencimiento, período de gracia y escalado automático a los contactos.
+- **👥 Contactos de Emergencia**: Gestión de contactos de confianza que reciben la alerta por email.
+- **📍 Ubicación Durante la Protección**: Registro del historial de ubicaciones mientras la protección está activa.
+- **🔗 Seguimiento Sin Cuenta**: Los contactos reciben un enlace único para seguir la situación desde la web, sin registrarse.
+- **📲 Notificaciones Push**: Recordatorios en el teléfono antes del vencimiento.
+- **🌐 Landing con Lista de Espera**: Sitio en Astro para el lanzamiento.
+
+## Technical Challenges
+
+El corazón del sistema es un **protocolo de alerta confiable**: cada protección pasa por varios estados (activa, aviso enviado, período de gracia, alertada, confirmada o cancelada) y ninguna alerta puede perderse ni dispararse dos veces. El backend corre en funciones serverless de Vercel, que no pueden quedar escuchando, así que un **Cloudflare Worker** actúa como "despertador" y ejecuta cada minuto el endpoint protegido que avanza el protocolo.
+
+Para la privacidad, cada protección guarda una **copia de los contactos** al momento de iniciarse y usa un **token de seguimiento único**, de modo que el enlace compartido no expone la cuenta del usuario.
+
+## Lessons Learned
+
+En una app de seguridad, la confiabilidad importa más que las funciones. Por eso el backend tiene **tests automatizados** de autenticación, contactos, protecciones, push tokens, scheduler y seguimiento, y smoke tests de punta a punta del protocolo de alerta.
