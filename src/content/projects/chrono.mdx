@@ -1,0 +1,34 @@
+---
+title: "CHRONO"
+description: "Emulador de terminal escrito desde cero en Rust que interpreta lo que muestra: resalta errores, hace clickeables los stack traces y colorea JSON."
+image: "/covers/chrono.svg"
+technologies:
+    ["Rust", "PTY", "VT100 / ANSI", "vte", "fontdue", "winit", "softbuffer", "GitHub Actions"]
+year: "2026"
+status: "En desarrollo"
+codeUrl: "https://github.com/zeltri/CHRONO"
+gradient: "from-amber-500 to-violet-600"
+icon: "Terminal"
+order: 6
+type: "web"
+---
+
+## Overview
+
+**CHRONO** es un emulador de terminal construido desde cero en **Rust**. La mayoría de las terminales solo dibujan texto; CHRONO **interpreta** lo que se muestra: detecta errores, stack traces y JSON, y ofrece sugerencias del historial mientras se escribe, sin plugins ni configuración.
+
+## Key Features
+
+- **🔴 Resaltado Semántico**: Errores y advertencias destacados automáticamente en la salida.
+- **🖱️ Stack Traces Clickeables**: Las rutas de archivo con línea se abren directamente en el editor.
+- **🎨 JSON con Sintaxis**: Detección y coloreado de JSON en la salida de comandos.
+- **💡 Sugerencias del Historial**: Autocompletado inline mientras se escribe.
+- **⚙️ Configuración en TOML**: Temas, fuentes y comportamiento configurables.
+
+## Technical Challenges
+
+Construir una terminal implica implementar varias capas de bajo nivel: un **PTY multiplataforma** para comunicarse con la shell, un **parser de secuencias ANSI/VT100**, un **modelo de grilla** con soporte de ancho Unicode y un **renderer propio** de fuentes con `fontdue` sobre `softbuffer` y `winit`. Cada capa vive en su propio crate (`core`, `ansi`, `pty`, `renderer`, `app`).
+
+## Lessons Learned
+
+Este proyecto me hizo entender cómo funcionan por dentro las herramientas que uso todos los días: protocolos de terminal, renderizado de texto y la comunicación entre procesos.

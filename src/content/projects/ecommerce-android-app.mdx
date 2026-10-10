@@ -1,6 +1,6 @@
 ---
-title: "E-commerce Multiplatform"
-description: "Aplicación multiplataforma desarrollada con React Native y Expo para Android, iOS y Web, integrada con un marketplace multi-ciudad."
+title: "En Diez · Marketplace multi-ciudad"
+description: "Marketplace multi-ciudad donde vendedores publican productos, servicios, vehículos e inmuebles, con pagos divididos de MercadoPago, delivery propio y notificaciones push."
 image: "/Endiez/1.png"
 technologies:
     [
@@ -10,68 +10,42 @@ technologies:
         "MercadoPago SDK",
         "Firebase",
         "Express.js",
+        "Supabase (PostgreSQL)",
     ]
 year: "2025-2026"
 status: "Lanzado"
 demoUrl: "http://endiez.com"
-codeUrl: ""
 gradient: "from-orange-400 to-red-600"
 icon: "Store"
+order: 2
 type: "web"
 ---
 
 ## Overview
 
-     **E-Commerce Marketplace** es una plataforma de comercio electrónico de última generación diseñada
-      para conectar vendedores locales con compradores en un entorno **multi-ciudad**. A diferencia de
-      los e-commerce tradicionales, este sistema geolocaliza dinámicamente toda la experiencia de usuario
-      (productos, banners y categorías) basándose en la ubicación detectada. El objetivo principal es
-      ofrecer una infraestructura de "Marketplace como Servicio" donde la gestión de comisiones, pagos
-      divididos y logística de última milla está totalmente automatizada.
+**En Diez** es una plataforma de comercio electrónico de última generación diseñada para conectar vendedores locales con compradores en un entorno **multi-ciudad**. A diferencia de los e-commerce tradicionales, este sistema geolocaliza dinámicamente toda la experiencia de usuario (productos, banners y categorías) basándose en la ubicación detectada. El objetivo principal es ofrecer una infraestructura de "Marketplace como Servicio" donde la gestión de comisiones, pagos divididos y logística de última milla está totalmente automatizada.
 
-     ## Key Features
-     - **📍 Inteligencia Multi-Ciudad**: Detección automática de ubicación por IP o perfil, filtrando el
-      catálogo en tiempo real para ciudades específicas (San Rafael, General Alvear, Malargüe) mediante
-      un sistema de `CityContext` y middleware dedicado.
-     - **💰 Marketplace con Split-Payment**: Integración avanzada con MercadoPago que automatiza el
-      cobro de comisiones mediante `application_fee`, enviando el pago neto al vendedor y la comisión a
-      la plataforma de forma transparente y segura.
-     - **🔔 Ecosistema de Notificaciones Omnicanal**: Sistema robusto de alertas que combina **WhatsApp
-      Business API** (plantillas dinámicas), **Firebase Push Notifications** y dashboards administrativos
-      para mantener a vendedores y clientes informados sobre cada cambio de estado en sus pedidos.
-    - **🎡 Motor de Engagement Local**: Incluye sistemas de banners anti-repetición, sorteos por
-      referidos y lógica de precios diferenciados (descuentos por efectivo vs. tarjeta) para incentivar
-      la conversión local.
+## Key Features
 
-    ## Technical Challenges
-    Uno de los mayores retos fue la **re-arquitectura del sistema de pagos Marketplace**. Inicialmente,
-      la integración con MercadoPago presentaba errores de flujo al usar `collector_id` de forma manual.
-      Lo solucioné migrando a una arquitectura basada en **OAuth de vendedores**, donde cada transacción
-      utiliza el token del vendedor pero aplica una `application_fee` automatizada. Esto eliminó la
-      fricción en la validación de cuentas y garantizó que la plataforma escale sin intervención manual
-      en cada venta.
+- **📍 Inteligencia Multi-Ciudad**: Detección automática de ubicación por IP o perfil, filtrando el catálogo en tiempo real para ciudades específicas (San Rafael, General Alvear, Malargüe) mediante un sistema de `CityContext` y middleware dedicado.
+- **💰 Marketplace con Split-Payment**: Integración avanzada con MercadoPago que automatiza el cobro de comisiones mediante `application_fee`, enviando el pago neto al vendedor y la comisión a la plataforma de forma transparente y segura.
+- **🔔 Ecosistema de Notificaciones Omnicanal**: Sistema robusto de alertas que combina **WhatsApp Business API** (plantillas dinámicas), **Firebase Push Notifications** y dashboards administrativos para mantener a vendedores y clientes informados sobre cada cambio de estado en sus pedidos.
+- **🚚 Delivery Propio**: Red de repartidores con seguimiento en vivo, entregas programadas y códigos de verificación.
+- **🎯 Marketing y Recomendaciones**: Cupones, audiencias segmentadas, recomendaciones personalizadas por comportamiento y un módulo de predicciones del Mundial con sorteos.
+- **🎡 Motor de Engagement Local**: Incluye sistemas de banners anti-repetición, sorteos por referidos y lógica de precios diferenciados (descuentos por efectivo vs. tarjeta) para incentivar la conversión local.
 
-    Otro desafío técnico fue la **sincronización de estado multi-ciudad**. Lograr que un cambio de
-      ciudad en la URL (`/malargue`) se propagara instantáneamente a través de los filtros de base de
-      datos, los banners del frontend y las recomendaciones de productos requirió la implementación de un
-      Middleware de Express personalizado y un sistema de caché inteligente en el frontend con
-      `AsyncStorage` y hooks de React.
+## Technical Challenges
 
-    ## Lessons Learned
-    Este proyecto reforzó la importancia de la **arquitectura orientada a la documentación oficial**.
-      Aprendí que en sistemas financieros complejos como MercadoPago, es vital seguir los flujos estándar
-      (Marketplace Flow) en lugar de construir envoltorios personalizados que pueden volverse frágiles.
-      También descubrí que la **localización granular** (SEO y contenido por ciudad) es el factor
-      diferenciador que realmente genera tracción en plataformas regionales, transformando un e-commerce
-      genérico en una herramienta comunitaria esencial.
+Uno de los mayores retos fue la **re-arquitectura del sistema de pagos Marketplace**. Inicialmente, la integración con MercadoPago presentaba errores de flujo al usar `collector_id` de forma manual. Lo solucioné migrando a una arquitectura basada en **OAuth de vendedores**, donde cada transacción utiliza el token del vendedor pero aplica una `application_fee` automatizada. Esto eliminó la fricción en la validación de cuentas y garantizó que la plataforma escale sin intervención manual en cada venta.
 
-    ## Results & Impact
-    - **Automatización del 95% de la Operación**: La gestión de comisiones y notificaciones de venta
-      ahora es totalmente autónoma, permitiendo que el administrador se enfoque en el crecimiento del
-      negocio.
-    - **Confianza del Usuario**: La implementación de códigos de verificación para delivery y
-      actualizaciones por WhatsApp redujo drásticamente las consultas de soporte sobre el estado de los
-      pedidos.
-    - **Escalabilidad Regional**: El sistema está listo para añadir nuevas ciudades en cuestión de
-      minutos, con una infraestructura técnica que soporta múltiples vendedores operando bajo sus propias
-      reglas comerciales dentro de un mismo ecosistema.
+Otro desafío técnico fue la **sincronización de estado multi-ciudad**. Lograr que un cambio de ciudad en la URL (`/malargue`) se propagara instantáneamente a través de los filtros de base de datos, los banners del frontend y las recomendaciones de productos requirió la implementación de un Middleware de Express personalizado y un sistema de caché inteligente en el frontend con `AsyncStorage` y hooks de React.
+
+## Lessons Learned
+
+Este proyecto reforzó la importancia de la **arquitectura orientada a la documentación oficial**. Aprendí que en sistemas financieros complejos como MercadoPago, es vital seguir los flujos estándar (Marketplace Flow) en lugar de construir envoltorios personalizados que pueden volverse frágiles. También descubrí que la **localización granular** (SEO y contenido por ciudad) es el factor diferenciador que realmente genera tracción en plataformas regionales, transformando un e-commerce genérico en una herramienta comunitaria esencial.
+
+## Results & Impact
+
+- **Automatización del 95% de la Operación**: La gestión de comisiones y notificaciones de venta ahora es totalmente autónoma, permitiendo que el administrador se enfoque en el crecimiento del negocio.
+- **Confianza del Usuario**: La implementación de códigos de verificación para delivery y actualizaciones por WhatsApp redujo drásticamente las consultas de soporte sobre el estado de los pedidos.
+- **Escalabilidad Regional**: El sistema está listo para añadir nuevas ciudades en cuestión de minutos, con una infraestructura técnica que soporta múltiples vendedores operando bajo sus propias reglas comerciales dentro de un mismo ecosistema.

@@ -1,23 +1,24 @@
 ---
-title: "CROBF Management Hub"
-description: "Plataforma integral de gestión empresarial con tableros Kanban, documentación enriquecida y sistema de auditoría avanzado."
-image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200"
+title: "CROBF Hub"
+description: "Plataforma operativa de una empresa de software: proyectos, sprints, OKRs, standups, horas, facturación, finanzas y documentación en un solo lugar."
+image: "/covers/hub.svg"
 technologies:
     [
-        "Astro v6",
+        "Astro",
         "React 19",
         "Tailwind CSS v4",
+        "Express 5",
         "Drizzle ORM",
         "Turso",
         "Tiptap",
+        "Cloudflare Workers",
     ]
-year: "2025-2026"
-status: "En desarrollo"
-demoUrl: "#"
-codeUrl: "#"
-gradient: "from-slate-800 to-slate-950"
-icon: "Store"
+year: "2026"
+status: "En uso interno"
+gradient: "from-violet-600 to-blue-600"
+icon: "Server"
 type: "web"
+order: 7
 ---
 
 ## Overview
@@ -33,6 +34,11 @@ Construido sobre una arquitectura de monorepo moderna, utiliza **Astro v6** y **
 - **🛡️ Sistema de Auditoría Avanzado**: Trazabilidad completa de todas las acciones críticas, permitiendo a los administradores (Founders) supervisar la evolución operativa con total transparencia.
 - **👥 Gestión de Estructura Organizacional**: Modelo flexible de Organización -> Áreas -> Equipos -> Proyectos, adaptándose al crecimiento dinámico de la empresa.
 - **🔑 Control de Acceso (RBAC)**: Sistema de permisos granulares basado en roles, asegurando que cada miembro del equipo acceda solo a las herramientas y datos necesarios.
+- **🏃 Sprints y Métricas Ágiles**: Planificación de sprints con burndown, velocidad del equipo, dependencias entre tareas y standups diarios.
+- **🎯 OKRs, Horas y Vacaciones**: Objetivos y resultados clave, registro de horas trabajadas y gestión de licencias del equipo.
+- **💵 Clientes, Facturas y Finanzas**: Facturación con ítems, movimientos financieros y campañas de publicidad.
+- **🔗 Integración con GitHub**: Repositorios vinculados a proyectos y eventos de git asociados a cada tarea, más una bóveda cifrada de variables de entorno.
+- **🤖 Asistente de Telegram**: Bot desplegado en Cloudflare Workers con resumen diario y API keys para agentes de IA.
 - **⌨️ Command Palette**: Interfaz de comandos rápidos para navegación y búsqueda global, optimizando el flujo de trabajo de los usuarios avanzados.
 
 ## Technical Challenges

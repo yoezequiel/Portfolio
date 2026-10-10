@@ -1,0 +1,31 @@
+---
+title: "fullnative"
+description: "Paquete npm open source: toolchain TypeScript para Node.js sin dependencias, con una API orientada a objetos para archivos, carpetas, procesos y shells."
+image: "/covers/fullnative.svg"
+technologies: ["TypeScript", "Node.js", "Vitest", "npm", "CLI", "@clack/prompts"]
+year: "2026"
+status: "Publicado en npm"
+demoUrl: "https://www.npmjs.com/package/fullnative"
+codeUrl: "https://github.com/zeltri/full-native"
+gradient: "from-green-500 to-blue-600"
+icon: "Package"
+order: 14
+type: "web"
+---
+
+## Overview
+
+**fullnative** envuelve los módulos nativos de Node (`fs`, `child_process`, `crypto`) en una API simple y agradable para scripts, CLIs y herramientas de build. Las clases `File`, `Folder`, `Process` y `Shell` se instancian y encadenan, y los módulos `env` y `utils` son funciones puras.
+
+Lo acompaña **create-fullnative**, un CLI interactivo que genera un proyecto de automatización listo para usar: TypeScript estricto, `tsx` para desarrollo, `swc` para builds, `vitest` para tests y `zod` para validar la configuración.
+
+## Key Features
+
+- **📦 Cero Dependencias**: Usa únicamente módulos nativos de Node.js.
+- **🧷 Totalmente Tipado**: Declaraciones `.d.ts` para cada módulo.
+- **🔗 API Encadenable**: Objetos para recursos con estado y funciones puras para el resto.
+- **⚡ Scaffolder**: `pnpm create fullnative my-app` con prompts interactivos.
+
+## Lessons Learned
+
+Publicar una librería obliga a pensar en quien la usa: una API consistente, buena documentación, tipos precisos y versionado semántico.

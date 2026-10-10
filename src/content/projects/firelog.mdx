@@ -1,15 +1,16 @@
 ---
 title: "FireLog"
-description: "App móvil offline para digitalizar intervenciones de emergencia y generar informes técnicos con IA."
+description: "App móvil offline para bomberos: registra intervenciones en el campo y genera informes técnicos con IA, en la nube con Gemini o en el propio teléfono sin internet."
 image: "/Intervenciones/1.jpeg"
 technologies:
-    ["React Native", "Expo", "SQLite", "Google Gemini AI", "Expo Print", "Expo Location"]
+    ["React Native", "Expo", "SQLite", "llama.rn (IA local)", "Google Gemini AI", "Expo Print", "Expo Location", "Express"]
 year: "2025-2026"
 status: "Lanzado"
-demoUrl: ""
-codeUrl: "https://github.com/yoezequiel/Intervenciones"
+demoUrl: "https://firelog.crobf.tech"
+codeUrl: ""
 gradient: "from-red-600 to-orange-500"
 icon: "Zap"
+order: 1
 gallery:
     [
         "/Intervenciones/1.jpeg",
@@ -35,6 +36,10 @@ La app está construida con **React Native (Expo)** y una arquitectura **Offline
 - **Gestión Multimedia**: Captura directa con cámara y selección desde galería; almacenamiento local de fotos como evidencia técnica.
 - **Generación de Informes con IA**: Motor de IA que redacta la narrativa en tercera persona con estilo bomberil argentino (narrativa continua, mención de móviles, jerarquías, "se retorna a base").
 - **Selector de Modelos Gemini**: Panel de configuración que permite elegir entre múltiples versiones de Gemini (2.0 Flash, 2.5 Pro, 3 Flash Preview, etc.) y probarlos directamente desde la app.
+- **IA en el Dispositivo (sin internet)**: Un modelo de lenguaje descargable corre localmente con `llama.rn`, para generar informes incluso sin señal en el lugar del siniestro.
+- **Croquis de la Intervención**: Lienzo para dibujar el croquis del siniestro con marcadores, directamente desde el teléfono.
+- **Dictado por Voz**: Carga de campos por reconocimiento de voz para no escribir con guantes o en movimiento.
+- **Sincronización con la Nube**: Cola de sincronización (push/pull) con un backend propio para respaldar las intervenciones cuando vuelve la conexión.
 - **Fallback Automático**: Si la API de IA no está disponible, se genera un informe local básico para garantizar continuidad operativa.
 - **Exportación Multi-formato**: Generación de PDFs profesionales (`expo-print`), copia al portapapeles y compartir por WhatsApp, email, Drive, etc.
 - **Modo Oscuro**: Soporte completo de tema claro/oscuro configurable desde la pantalla de ajustes.

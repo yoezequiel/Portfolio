@@ -16,6 +16,7 @@ const projects = defineCollection({
     icon: z.string().optional(),
     gallery: z.array(z.string()).optional(),
     type: z.enum(['app', 'web']).default('web'),
+    order: z.number().optional(),
   }),
 });
 

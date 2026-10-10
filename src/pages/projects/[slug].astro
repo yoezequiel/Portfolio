@@ -4,7 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ProjectGallery from '../../components/ProjectGallery';
-import { ExternalLink, Github, Calendar, Tag, Zap, Database, Cloud, Store, ChevronRight } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Tag, Zap, ChevronRight } from 'lucide-react';
+import { ICON_MAP } from '../../components/Projects';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -22,6 +23,7 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 const { title, description, image, technologies, year, status, demoUrl, codeUrl, gradient, icon, gallery, type } = project.data;
 const isApp = type === 'app';
+const Icon = (icon && ICON_MAP[icon as keyof typeof ICON_MAP]) || Zap;
 ---
 
 <Layout title={`${title} | Proyecto`}>
@@ -99,10 +101,7 @@ const isApp = type === 'app';
           <div class="bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 sticky top-32 space-y-8 shadow-2xl">
             <div class="flex items-center justify-between">
                <div class={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20`}>
-                {icon === 'Database' && <Database className="h-6 w-6 text-white" />}
-                {icon === 'Cloud' && <Cloud className="h-6 w-6 text-white" />}
-                {icon === 'Store' && <Store className="h-6 w-6 text-white" />}
-                {(icon === 'Zap' || !icon) && <Zap className="h-6 w-6 text-white" />}
+                <Icon className="h-6 w-6 text-white" />
               </div>
               <div class="flex gap-3">
                 {codeUrl && codeUrl !== '#' && (

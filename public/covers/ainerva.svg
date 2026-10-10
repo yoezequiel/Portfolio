@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#111827"/></linearGradient>
+<radialGradient id="g1" cx="0.85" cy="0.1" r="0.7"><stop offset="0" stop-color="#a78bfa" stop-opacity="0.45"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2" cx="0.05" cy="1" r="0.6"><stop offset="0" stop-color="#ec4899" stop-opacity="0.35"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></radialGradient>
+<linearGradient id="acc" x1="0" x2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#ec4899"/></linearGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#g1)"/><rect width="1200" height="675" fill="url(#g2)"/>
+<g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<text x="64" y="196" fill="#a78bfa" font-size="18" font-weight="600" letter-spacing="3">PYTHON · IA AGÉNTICA</text>
+<text x="64" y="262" fill="#ffffff" font-size="58" font-weight="800">Ainerva</text>
+<text x="64" y="304" fill="#9ca3af" font-size="22">Asistente de escritorio autónomo para Linux</text>
+<rect x="64" y="326" width="88" height="5" rx="2.5" fill="url(#acc)"/>
+</g>
+<g><rect x="560" y="270" width="580" height="350" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+<rect x="560" y="270" width="580" height="40" rx="14" fill="#1f2937"/><rect x="560" y="296" width="580" height="14" fill="#1f2937"/>
+<circle cx="582" cy="290" r="6" fill="#ef4444"/><circle cx="602" cy="290" r="6" fill="#f59e0b"/><circle cx="622" cy="290" r="6" fill="#22c55e"/>
+<text x="850.0" y="296" text-anchor="middle" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="14">ainerva</text><text x="584" y="345" font-family="JetBrains Mono, Fira Code, monospace" font-size="17" fill="#e5e7eb">› abrí el proyecto y corré los tests</text><text x="584" y="375" font-family="JetBrains Mono, Fira Code, monospace" font-size="17" fill="#a78bfa">◆ run_shell  pnpm test        [riesgo: bajo]</text><text x="584" y="405" font-family="JetBrains Mono, Fira Code, monospace" font-size="17" fill="#a78bfa">◆ see_screen  analizando ventana…</text><text x="584" y="435" font-family="JetBrains Mono, Fira Code, monospace" font-size="17" fill="#fbbf24">◆ write_file  fix.ts        [confirmar ✓]</text><text x="584" y="465" font-family="JetBrains Mono, Fira Code, monospace" font-size="17" fill="#34d399">✓ 42 tests pasaron. Listo.</text><text x="584" y="495" font-family="JetBrains Mono, Fira Code, monospace" font-size="17" fill="#64748b">🔊 respuesta por voz</text></g><text x="64" y="400" font-family="JetBrains Mono, Fira Code, monospace" font-size="19" fill="#cbd5e1">Gemini + Ollama</text><text x="64" y="440" font-family="JetBrains Mono, Fira Code, monospace" font-size="19" fill="#cbd5e1">Visión · voz · memoria</text><text x="64" y="480" font-family="JetBrains Mono, Fira Code, monospace" font-size="19" fill="#cbd5e1">Seguridad por riesgo</text><text x="64" y="520" font-family="JetBrains Mono, Fira Code, monospace" font-size="19" fill="#cbd5e1">PySide6 · systemd</text>
+</svg>

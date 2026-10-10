@@ -6,7 +6,9 @@ import Footer from '../../components/Footer';
 import Projects from '../../components/Projects';
 import { ChevronRight } from 'lucide-react';
 
-const allProjects = await getCollection('projects');
+const allProjects = (await getCollection('projects')).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)
+);
 ---
 
 <Layout title="Todos mis Proyectos | Portfolio">

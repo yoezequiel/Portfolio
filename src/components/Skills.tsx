@@ -4,36 +4,20 @@ import { Server, Database, Cloud, Shield, Code, Zap, Star, Award, CheckCircle } 
 const Skills = () => {
   const technicalSkills = [
     { 
-      name: 'HTML & CSS', 
-      level: 'Experto', 
-      color: 'from-orange-400 to-red-600', 
-      icon: Code,
-      experience: '4+ años',
-      projects: 25
-    },
-    { 
       name: 'JavaScript/TypeScript', 
       level: 'Experto', 
       color: 'from-yellow-400 to-yellow-600', 
       icon: Code,
       experience: '3+ años',
-      projects: 20
+      projects: 30
     },
     { 
-      name: 'React & Astro', 
-      level: 'Avanzado', 
+      name: 'Astro & React', 
+      level: 'Experto', 
       color: 'from-cyan-400 to-blue-600', 
       icon: Code,
       experience: '3+ años',
-      projects: 18
-    },
-    { 
-      name: 'Tailwind CSS', 
-      level: 'Avanzado', 
-      color: 'from-teal-400 to-cyan-600', 
-      icon: Code,
-      experience: '2+ años',
-      projects: 15
+      projects: 40
     },
     { 
       name: 'Node.js & Express', 
@@ -41,31 +25,55 @@ const Skills = () => {
       color: 'from-green-400 to-green-600', 
       icon: Server,
       experience: '3+ años',
-      projects: 15
+      projects: 25
     },
     { 
-      name: 'Python & Flask', 
+      name: 'HTML, CSS & Tailwind', 
+      level: 'Experto', 
+      color: 'from-orange-400 to-red-600', 
+      icon: Code,
+      experience: '4+ años',
+      projects: 35
+    },
+    { 
+      name: 'SQLite, Turso & Drizzle', 
+      level: 'Avanzado', 
+      color: 'from-purple-400 to-purple-600', 
+      icon: Database,
+      experience: '3+ años',
+      projects: 25
+    },
+    { 
+      name: 'React Native & Expo', 
+      level: 'Avanzado', 
+      color: 'from-cyan-400 to-blue-600', 
+      icon: Code,
+      experience: '2+ años',
+      projects: 7
+    },
+    { 
+      name: 'Auth, Seguridad & APIs', 
+      level: 'Avanzado', 
+      color: 'from-red-400 to-red-600', 
+      icon: Shield,
+      experience: '3+ años',
+      projects: 20
+    },
+    { 
+      name: 'Python', 
       level: 'Avanzado', 
       color: 'from-blue-400 to-blue-600', 
       icon: Code,
+      experience: '3+ años',
+      projects: 15
+    },
+    { 
+      name: 'IA aplicada (Gemini, LLMs)', 
+      level: 'Avanzado', 
+      color: 'from-pink-400 to-purple-600', 
+      icon: Zap,
       experience: '2+ años',
       projects: 8
-    },
-    { 
-      name: 'Django & Python', 
-      level: 'Avanzado', 
-      color: 'from-green-500 to-green-700', 
-      icon: Code,
-      experience: '2+ años',
-      projects: 6
-    },
-    { 
-      name: 'SQL & PostgreSQL', 
-      level: 'Avanzado', 
-      color: 'from-blue-500 to-indigo-600', 
-      icon: Database,
-      experience: '3+ años',
-      projects: 20
     },
     { 
       name: 'Linux & VPS', 
@@ -76,135 +84,119 @@ const Skills = () => {
       projects: 25
     },
     { 
-      name: 'Docker & Apache', 
+      name: 'PostgreSQL & Supabase', 
+      level: 'Intermedio+', 
+      color: 'from-blue-500 to-indigo-600', 
+      icon: Database,
+      experience: '2+ años',
+      projects: 4
+    },
+    { 
+      name: 'Rust', 
+      level: 'Intermedio', 
+      color: 'from-orange-500 to-amber-600', 
+      icon: Code,
+      experience: '1+ año',
+      projects: 2
+    },
+    { 
+      name: 'Docker & Deploy', 
       level: 'Intermedio+', 
       color: 'from-blue-500 to-cyan-600', 
       icon: Cloud,
-      experience: '5+ años',
-      projects: 15
-    },
-    { 
-      name: 'Java & C++', 
-      level: 'Intermedio', 
-      color: 'from-red-400 to-orange-600', 
-      icon: Code,
-      experience: '5+ años',
-      projects: 8
-    },
-    { 
-      name: 'libSQL & Databases', 
-      level: 'Intermedio+', 
-      color: 'from-purple-400 to-purple-600', 
-      icon: Database,
-      experience: '5+ años',
-      projects: 15
-    },
-    { 
-      name: 'N8N & Automatización', 
-      level: 'Intermedio', 
-      color: 'from-purple-500 to-pink-600', 
-      icon: Zap,
-      experience: '5+ años',
-      projects: 8
-    },
-    { 
-      name: 'React Native & Expo', 
-      level: 'Intermedio+', 
-      color: 'from-cyan-400 to-blue-600', 
-      icon: Code,
       experience: '2+ años',
-      projects: 7
+      projects: 15
     },
     { 
-      name: 'Kotlin & Android', 
+      name: 'MercadoPago & Pagos', 
+      level: 'Intermedio+', 
+      color: 'from-sky-400 to-blue-600', 
+      icon: Shield,
+      experience: '2+ años',
+      projects: 3
+    },
+    { 
+      name: 'Testing (Vitest, Playwright)', 
       level: 'Intermedio', 
-      color: 'from-orange-500 to-purple-600', 
-      icon: Code,
+      color: 'from-green-500 to-emerald-700', 
+      icon: CheckCircle,
       experience: '1+ año',
-      projects: 4
-    },
-    { 
-      name: 'GitHub Actions', 
-      level: 'Avanzado', 
-      color: 'from-gray-600 to-gray-800', 
-      icon: Cloud,
-      experience: '5+ años',
-      projects: 20
-    },
-    { 
-      name: 'DevOps & CI/CD', 
-      level: 'Intermedio', 
-      color: 'from-orange-400 to-orange-600', 
-      icon: Cloud,
-      experience: '5+ años',
       projects: 10
     },
     { 
-      name: 'Ciberseguridad', 
+      name: 'GitHub Actions & CI/CD', 
       level: 'Intermedio', 
-      color: 'from-red-400 to-red-600', 
-      icon: Shield,
+      color: 'from-gray-600 to-gray-800', 
+      icon: Cloud,
       experience: '1+ año',
-      projects: 4
+      projects: 5
+    },
+    { 
+      name: 'Java', 
+      level: 'Básico', 
+      color: 'from-red-400 to-orange-600', 
+      icon: Code,
+      experience: '1+ año',
+      projects: 3
     },
     { 
       name: 'Figma & UI/UX', 
-      level: 'Intermedio+', 
+      level: 'Intermedio', 
       color: 'from-pink-400 to-purple-600', 
       icon: Code,
       experience: '2+ años',
-      projects: 12
+      projects: 5
     },
   ];
 
   const specializations = [
     {
       title: 'Desarrollo Frontend',
-      description: 'Especialista en interfaces modernas y responsivas con frameworks de última generación y mejores prácticas de UX.',
-      technologies: ['React', 'Astro', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3'],
-      icon: Server,
+      description: 'Interfaces rápidas y responsivas con SSR e islas interactivas, SEO, internacionalización y animación.',
+      technologies: ['Astro', 'React', 'TypeScript', 'Tailwind CSS', 'TanStack Query', 'Framer Motion'],
+      icon: Code,
       color: 'from-cyan-400 to-blue-600',
-      badge: 'Frontend Expert'
+      badge: 'Frontend'
     },
     {
       title: 'Desarrollo Backend',
-      description: 'Arquitectura de APIs robustas, bases de datos escalables y sistemas de autenticación seguros.',
-      technologies: ['Node.js', 'Express', 'Python', 'Flask', 'Django', 'PostgreSQL'],
-      icon: Database,
+      description: 'APIs REST seguras con autenticación, roles, multi-tenant, pagos, emails y tareas programadas.',
+      technologies: ['Node.js', 'Express', 'Hono', 'Zod', 'JWT', 'MercadoPago'],
+      icon: Server,
       color: 'from-green-400 to-green-600',
-      badge: 'Backend Expert'
+      badge: 'Backend'
     },
     {
-      title: 'DevOps & Infraestructura',
-      description: 'Especialista en automatización, gestión de servidores, contenedores y flujos CI/CD con herramientas modernas.',
-      technologies: ['Linux', 'VPS', 'Docker', 'Apache', 'GitHub Actions', 'N8N'],
-      icon: Cloud,
-      color: 'from-blue-400 to-blue-600',
-      badge: 'Infraestructura'
-    },
-    {
-      title: 'Desarrollo Multiplataforma',
-      description: 'Desarrollo de aplicaciones móviles y de escritorio con múltiples tecnologías y frameworks modernos.',
-      technologies: ['React Native', 'Expo', 'Kotlin', 'Java', 'C++'],
+      title: 'Apps Móviles',
+      description: 'Apps multiplataforma con funcionamiento offline, GPS, cámara, notificaciones push y sincronización.',
+      technologies: ['React Native', 'Expo', 'Expo Router', 'SQLite', 'Firebase'],
       icon: Code,
       color: 'from-orange-400 to-red-600',
-      badge: 'Mobile & Desktop'
+      badge: 'Mobile'
     },
     {
-      title: 'Diseño & Experiencia de Usuario',
-      description: 'Creación de interfaces intuitivas y experiencias de usuario excepcionales con herramientas de diseño profesionales.',
-      technologies: ['Figma', 'UI/UX Design', 'Prototyping', 'Design Systems'],
-      icon: Code,
+      title: 'Inteligencia Artificial Aplicada',
+      description: 'IA integrada en productos reales: agentes con herramientas, modelos que corren en el teléfono y generación de contenido.',
+      technologies: ['Google Gemini', 'Ollama', 'llama.rn', 'Agentes', 'OCR'],
+      icon: Zap,
       color: 'from-pink-400 to-purple-600',
-      badge: 'Design & UX'
+      badge: 'IA'
     },
     {
-      title: 'Bases de Datos & Analytics',
-      description: 'Diseño y optimización de bases de datos, análisis de datos y desarrollo de herramientas de métricas.',
-      technologies: ['SQL', 'PostgreSQL', 'libSQL', 'GitHub API', 'Analytics'],
+      title: 'Sistemas & Infraestructura',
+      description: 'Software de sistemas en Rust, monitoreo de servidores, deploy en VPS y plataformas serverless.',
+      technologies: ['Rust', 'Tokio', 'Tauri', 'Linux', 'Docker', 'Vercel', 'Cloudflare Workers'],
+      icon: Cloud,
+      color: 'from-blue-400 to-blue-600',
+      badge: 'Sistemas'
+    },
+    {
+      title: 'Bases de Datos',
+      description: 'Modelado de datos, migraciones y ORMs, desde SQLite distribuido hasta PostgreSQL.',
+      technologies: ['Turso', 'SQLite', 'PostgreSQL', 'Supabase', 'Drizzle', 'Prisma'],
       icon: Database,
       color: 'from-purple-400 to-purple-600',
-      badge: 'Data & Analytics'
+      badge: 'Datos'
     }
   ];
 
@@ -339,15 +331,15 @@ const Skills = () => {
                 <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Code className="h-8 w-8 text-blue-400" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">40+</h4>
-                <p className="text-gray-300 text-sm">Proyectos completados</p>
+                <h4 className="text-lg font-semibold text-white mb-2">80+</h4>
+                <p className="text-gray-300 text-sm">Repositorios con código</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Server className="h-8 w-8 text-purple-400" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">18+</h4>
-                <p className="text-gray-300 text-sm">Tecnologías dominadas</p>
+                <h4 className="text-lg font-semibold text-white mb-2">9</h4>
+                <p className="text-gray-300 text-sm">Lenguajes de programación</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">

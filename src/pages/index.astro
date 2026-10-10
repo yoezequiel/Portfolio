@@ -11,7 +11,9 @@ import Footer from '../components/Footer';
 import { getCollection } from 'astro:content';
 import { ArrowRight } from 'lucide-react';
 
-const allProjects = await getCollection('projects');
+const allProjects = (await getCollection('projects')).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)
+);
 const featuredProjects = allProjects.slice(0, 6);
 ---
 

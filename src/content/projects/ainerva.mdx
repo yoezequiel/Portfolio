@@ -1,0 +1,38 @@
+---
+title: "Ainerva"
+description: "Asistente de IA agéntico para Linux, inspirado en JARVIS: ejecuta comandos, ve la pantalla, controla mouse y teclado, recuerda entre sesiones y conversa por voz."
+image: "/covers/ainerva.svg"
+technologies:
+    ["Python", "Google Gemini", "Ollama", "PySide6", "Pydantic", "edge-tts", "asyncio", "Hyprland"]
+year: "2026"
+status: "En desarrollo"
+gradient: "from-violet-500 to-pink-500"
+icon: "Bot"
+order: 5
+type: "web"
+---
+
+## Overview
+
+**Ainerva** es un asistente de escritorio de IA **autónomo** para Linux, potenciado por **Google Gemini** con soporte para modelos locales vía **Ollama**. Puede razonar y actuar de forma agéntica: decide qué herramientas usar para cumplir un pedido y ejecuta los pasos necesarios.
+
+Está escrito en Python con una arquitectura **asincrónica y modular**, y su eje es la **seguridad por capas**: cada acción se clasifica según su riesgo y las peligrosas requieren confirmación del usuario.
+
+## Key Features
+
+- **🛠️ Herramientas del Sistema**: Ejecutar comandos, leer y escribir archivos y listar directorios.
+- **👁️ Visión de Pantalla**: Captura la pantalla y la analiza con el modelo de visión.
+- **🖱️ Control de Mouse y Teclado**: Automatiza interacciones con aplicaciones de escritorio.
+- **🪟 Gestión de Ventanas**: Integración con Hyprland para mover y organizar ventanas.
+- **🧠 Memoria Persistente**: Recuerda hechos y conversaciones entre sesiones, con tareas programadas.
+- **🔊 Voz**: Respuestas habladas con `edge-tts` y conversaciones de voz en tiempo real.
+- **🛡️ Seguridad por Riesgo**: Clasificación de cada acción y confirmación obligatoria para las de alto riesgo.
+- **🖥️ Interfaz Gráfica**: GUI con PySide6 y ejecución como servicio de systemd.
+
+## Technical Challenges
+
+El reto principal fue darle autonomía real al agente **sin perder el control**: definir niveles de riesgo para cada herramienta, pedir confirmación en el momento justo y registrar lo que hace. También fue clave diseñar un sistema de proveedores intercambiables (Gemini u Ollama) con configuración validada por Pydantic.
+
+## Lessons Learned
+
+Construir un agente es mucho más que llamar a un modelo: la calidad depende del diseño de las herramientas, de la memoria y de los límites de seguridad.

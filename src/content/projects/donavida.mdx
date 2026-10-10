@@ -1,0 +1,30 @@
+---
+title: "DonaVida"
+description: "App móvil que conecta a personas que necesitan sangre con donantes cercanos, con mapa, solicitudes y campañas de donación."
+image: "/DonaVida/landing.jpg"
+technologies: ["React Native", "Expo SDK 54", "Expo Router", "MapLibre", "Express", "Prisma", "Turso", "Astro"]
+year: "2026"
+status: "En desarrollo"
+demoUrl: "https://donavida.crobf.tech"
+gradient: "from-rose-600 to-red-800"
+icon: "HeartPulse"
+order: 10
+type: "app"
+gallery: ["/DonaVida/1.jpg", "/DonaVida/2.jpg"]
+---
+
+## Overview
+
+**DonaVida** es una plataforma de donación de sangre que conecta a quienes la necesitan con donantes cercanos. Es un monorepo con tres partes: la **app móvil** (React Native + Expo), el **backend** (Express + Prisma + Turso) y la **landing** (Astro) con su política de privacidad.
+
+## Key Features
+
+- **🩸 Solicitudes de Donación**: Publicación de pedidos con grupo sanguíneo, urgencia y lugar.
+- **📍 Cercanía**: Cálculo de distancia con la ubicación del usuario para mostrar primero los pedidos cercanos.
+- **🗺️ Mapa**: Visualización de solicitudes y campañas con MapLibre.
+- **📢 Campañas**: Jornadas de donación organizadas por instituciones.
+- **🔐 Cuentas**: Registro, login con JWT y almacenamiento seguro del token en el dispositivo.
+
+## Technical Challenges
+
+Organizar un monorepo con pnpm workspaces que comparta configuración entre la app, la API y la landing, y resolver el filtrado por cercanía de forma eficiente en el cliente.

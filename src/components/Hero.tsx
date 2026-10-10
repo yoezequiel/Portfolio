@@ -32,23 +32,23 @@ const Hero = () => {
           </p>
           
           <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
-            Desarrollador Full-Stack enfocado en construir productos digitales completos: desde la interfaz hasta la infraestructura. 
-            Trabajo con React, Node.js, Python y sistemas Linux, creando plataformas escalables y automatizadas listas para producción.
+            Desarrollador Full-Stack orientado a producto: web, API, base de datos, apps móviles y deploy. 
+            Trabajo con TypeScript, Astro, React, Node.js y React Native, integro IA en los productos y construyo software de sistemas en Rust.
           </p>
 
           {/* Key Highlights */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2">
             <div className="flex items-center space-x-2 bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-full px-3 py-2 sm:px-4">
               <Code className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
-              <span className="text-gray-300 text-xs sm:text-sm">React & TypeScript</span>
+              <span className="text-gray-300 text-xs sm:text-sm">TypeScript · Astro · React</span>
             </div>
             <div className="flex items-center space-x-2 bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-full px-3 py-2 sm:px-4">
               <Code className="h-3 w-3 sm:h-4 sm:w-4 text-purple-400" />
-              <span className="text-gray-300 text-xs sm:text-sm">Python & Node.js</span>
+              <span className="text-gray-300 text-xs sm:text-sm">Node.js · React Native</span>
             </div>
             <div className="flex items-center space-x-2 bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-full px-3 py-2 sm:px-4">
               <Code className="h-3 w-3 sm:h-4 sm:w-4 text-green-400" />
-              <span className="text-gray-300 text-xs sm:text-sm">PostgreSQL & DevOps</span>
+              <span className="text-gray-300 text-xs sm:text-sm">IA aplicada · Rust</span>
             </div>
           </div>
 

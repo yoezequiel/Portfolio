@@ -1,0 +1,50 @@
+---
+title: "VpsMonitor"
+description: "Plataforma self-hosted en Rust para monitorear servidores, VPS y contenedores Docker desde un único punto, con alertas, incidentes y app de escritorio."
+image: "/covers/vpsmonitor.svg"
+technologies:
+    [
+        "Rust",
+        "Tokio",
+        "Axum",
+        "SQLx",
+        "Tauri 2",
+        "React",
+        "TypeScript",
+        "Docker API",
+        "rustls",
+    ]
+year: "2026"
+status: "En desarrollo"
+codeUrl: "https://github.com/yoezequiel/VpsMonitor"
+gradient: "from-cyan-500 to-indigo-600"
+icon: "Server"
+order: 4
+type: "web"
+---
+
+## Overview
+
+**VpsMonitor** es una herramienta de monitorización de infraestructura pensada para desarrolladores y pequeñas organizaciones, con una filosofía **self-hosted y local-first**: no depende de ningún servicio en la nube. Cualquier máquina puede actuar como **monitor**, como **agente** o como ambos a la vez.
+
+Está escrito en **Rust** como un workspace de varios crates (agente, monitor, CLI, configuración y tipos compartidos), con un panel web en React y una aplicación de escritorio construida con **Tauri 2**.
+
+## Key Features
+
+- **📡 Arquitectura Agente-Monitor**: Los agentes se registran mediante tokens de emparejamiento y reportan heartbeat, métricas y logs.
+- **📈 Métricas en Tiempo Real**: CPU, memoria, disco y red con `sysinfo`, agregadas con rollups y enviadas al panel por WebSocket.
+- **🐳 Monitoreo de Docker**: Estado de contenedores mediante la API de Docker (`bollard`).
+- **🚨 Alertas e Incidentes**: Reglas de alerta configurables, eventos, incidentes con historial y health checks.
+- **🗂️ Grupos y Etiquetas**: Organización de servidores por grupos y tags.
+- **🔐 Seguridad**: Contraseñas con Argon2, sesiones y TLS con `rustls` y certificados generados con `rcgen`.
+- **🖥️ App de Escritorio**: Cliente nativo con Tauri 2 que integra monitor y agente.
+
+## Technical Challenges
+
+El mayor reto fue diseñar un **protocolo agente-monitor seguro y resistente** a desconexiones: registro con tokens de un solo uso, comunicación cifrada con TLS y almacenamiento eficiente de series de métricas mediante rollups para que la base no crezca sin control.
+
+Organizar el código como un **workspace multi-crate** permitió compartir tipos y lógica entre el binario del agente, el del monitor y la app de escritorio sin duplicar código.
+
+## Lessons Learned
+
+Rust obliga a pensar la concurrencia y el manejo de errores desde el diseño. Trabajar con `tokio` y `axum` me dio una base sólida en programación asincrónica y en construir servicios de red confiables.

@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Calendar, Tag, Zap, Database, Cloud, Store } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Tag, Zap, Database, Cloud, Store, Terminal, Bot, Shield, Package, HeartPulse, CalendarCheck, Server } from 'lucide-react';
 
 interface ProjectData {
   id: string;
@@ -17,11 +17,18 @@ interface ProjectData {
   };
 }
 
-const ICON_MAP = {
+export const ICON_MAP = {
   Database,
   Cloud,
   Store,
-  Zap
+  Zap,
+  Terminal,
+  Bot,
+  Shield,
+  Package,
+  HeartPulse,
+  CalendarCheck,
+  Server
 };
 
 const Projects = ({ projects }: { projects: ProjectData[] }) => {
