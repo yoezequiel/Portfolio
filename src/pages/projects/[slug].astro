@@ -21,8 +21,8 @@ interface Props {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { title, description, image, technologies, year, status, demoUrl, codeUrl, gradient, icon, gallery, type } = project.data;
-const isApp = type === 'app';
+const { title, description, image, technologies, year, status, demoUrl, codeUrl, gradient, icon, gallery, type, imageType } = project.data;
+const isApp = (imageType ?? type) === 'app';
 const Icon = (icon && ICON_MAP[icon as keyof typeof ICON_MAP]) || Zap;
 ---
 

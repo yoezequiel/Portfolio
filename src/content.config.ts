@@ -17,6 +17,7 @@ const projects = defineCollection({
     gallery: z.array(z.string()).optional(),
     type: z.enum(['app', 'web']).default('web'),
     order: z.number().optional(),
+    imageType: z.enum(['app', 'web']).optional(),
   }),
 });
 
